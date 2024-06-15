@@ -259,10 +259,10 @@ Various parts of this guide will refer back to this section whenever a user serv
 
 The PipeWire media server has come a long way since its early days; I definitely recommend you set it up as your system's audio server. It'll also allow screensharing the whole desktop.
 
-1.  Begin by installing `pipewire` and `alsa-pipewire`:
+1.  Begin by installing `pipewire`, `alsa-pipewire` and `rtkit`:
 
     ```Shell
-    sudo xbps-install pipewire alsa-pipewire
+    sudo xbps-install pipewire alsa-pipewire rtkit
     ```
 
 2.  Create the `/etc/pipewire/pipewire.conf.d` directory:
