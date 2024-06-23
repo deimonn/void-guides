@@ -45,7 +45,7 @@ include /usr/share/nano/*.nanorc
 include /usr/share/nano/extra/*.nanorc
 ```
 
-And set it as the default editor by appending to `~/.bash_profile`:
+And set it as the default editor by appending the following to either `~/.bashrc` or `~/.bash_profile`:
 
 ```Bash
 export EDITOR=nano
