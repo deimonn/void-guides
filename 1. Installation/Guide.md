@@ -22,7 +22,7 @@ The remaining options in the installer are up to you. Finish the installation be
 
 ## First boot
 
-Update the system. You may possibly need to invoke xbps multiple times for this:
+Update the system. You may possibly need to invoke xbps multiple times for this, depending on how up-to-date your image is:
 
 ```Shell
 sudo xbps-install -Su
@@ -321,11 +321,11 @@ There's a lot more you can do to improve the GNOME experience! I've only include
 
 Definitely check out [Further configuring GNOME](../2.%20More%20Configuration/Further%20configuring%20GNOME.md) after going through this page.
 
-### Reboot
+### Restart the session
 
 This is a good point to restart your session, specially if you did the **Creating the user directories** or **Installing an audio and media server** steps, as those require the GNOME shell to restart to fully integrate.
 
-You can do this by logging out and back in.
+You can do this by logging out and back in, or by simply rebooting the computer.
 
 ## Configuring the system
 
