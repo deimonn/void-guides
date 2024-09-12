@@ -66,7 +66,7 @@ The desktop environment of GNOME can be further customized via extensions. To be
 sudo xbps-install gnome-browser-connector
 ```
 
-Afterwards nagivate to the [extensions site](https://extensions.gnome.org/). There will be a banner asking you to install an add-on for your choice of browser.
+Afterwards navigate to the [extensions site](https://extensions.gnome.org/). There will be a banner asking you to install an add-on for your choice of browser.
 
 After doing so, simply go to any desired extension's page and press on the switch to turn the extension from "off" to "on", which will prompt you to install it.
 
