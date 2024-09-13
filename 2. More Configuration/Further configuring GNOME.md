@@ -72,9 +72,9 @@ After doing so, simply go to any desired extension's page and press on the switc
 
 I recommend you at least restore tray icons with [this extension](https://extensions.gnome.org/extension/615/appindicator-support/) or one that serves the same purpose, as those are pretty significant.
 
-### My selection
+### Recommendations
 
-These are all the extensions I personally use.
+These are the extensions I used back when I still ran GNOME. They're still good.
 
 - **Auto Move Windows** by fmuellner, available natively on Void. Allows one to, for example, move autostarted programs to other workspaces on login.
 
