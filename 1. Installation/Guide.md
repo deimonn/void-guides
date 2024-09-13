@@ -1,6 +1,6 @@
-# Void Linux plus GNOME Installation Guide
+# Void Linux plus Desktop Installation Guide
 
-A guide to installing Void Linux and setting up the GNOME desktop environment, along with a plethora of other smaller configurations.
+A guide to installing Void Linux and setting up a desktop environment, along with a plethora of other smaller configurations.
 
 I originally wrote these as "install notes" for myself, but I decided to rewrite it in a more agnostic manner and make it public in case its useful to anyone.
 
@@ -167,35 +167,100 @@ The propietary drivers have separate packages based on model:
 
 Simply run `sudo xbps-install mesa-dri`
 
-## Installing the desktop
+## Installing a desktop
 
-Install `dbus`, `elogind` and `gnome` with:
+### Setting up session and seat management
+
+Install `dbus` and `elogind`:
 
 ```Shell
-sudo xbps-install dbus elogind gnome
+sudo xbps-install dbus elogind
 ```
 
-This might take a while.
+Then enable the `dbus` service with:
 
-Afterwards, you will have to disable the `acpid` service, as it conflicts with `elogind`:
+```Shell
+sudo ln -s /etc/sv/dbus /var/service
+```
+
+You will also have to disable the `acpid` service that's enabled by default, as it conflicts with `elogind`:
 
 ```Shell
 sudo rm /var/service/acpid
 ```
 
-Finally, enable the `dbus` and `gdm` services and immediately reboot:
+### Getting the desktop environment
+
+It is time to download and install the desktop environment. The packages you will need differ for each; below are the commands for environments I've personally tested.
+
+#### GNOME
 
 ```Shell
-sudo ln -s /etc/sv/dbus /var/service
+sudo xbps-install gnome
+```
+
+#### KDE
+
+```Shell
+sudo xbps-install xorg kde5 kde5-baseapps
+```
+
+#### XFCE
+
+```Shell
+sudo xbps-install xorg xfce
+```
+
+### Setting up the display manager
+
+Finally, you must set up the display manager. GNOME and KDE come with their own; for XFCE or any other environment, you'll have to install one yourself.
+
+#### GNOME
+
+Simply enable the `gdm` service and then reboot immediately:
+
+```Shell
 sudo ln -s /etc/sv/gdm /var/service
 sudo reboot
 ```
 
 If you take too long to reboot, `gdm` may get started in a broken state and you'll have to forcefully reset the computer.
 
+After booting in again, run the following commands to generate the typical directories found in one's home (GNOME does not generate them by itself):
+
+```Shell
+sudo xbps-install xdg-user-dirs-gtk && xdg-user-dirs-update && xdg-user-dirs-gtk-update
+```
+
+#### KDE
+
+Enable the `sddm` service and then reboot:
+
+```Shell
+sudo ln -s /etc/sv/sddm /var/service
+sudo reboot
+```
+
+#### XFCE / Other
+
+Two good and simple display managers that you can use for other environments are `lightdm` and `lxdm`.
+
+LightDM is more customizable, but if you don't care how pretty your display manager looks, `lxdm` runs swimmingly.
+
+Install and enable one of the two with:
+
+```Shell
+sudo xbps-install <NAME>
+sudo ln -s /etc/sv/<NAME> /var/service
+```
+
+Replace `<NAME>` with either `lightdm` or `lxdm`, at your discretion.
+
+After first login, you'll likely want to reboot as otherwise policy kit will not be active. You may see the "shutdown" and "reboot" buttons disabled; you'll have to reboot via terminal.
+
 ## Configuring the desktop
 
-If you've done everything right, at this point you should've greeted with the GNOME desktop. Congratulations!
+If you've done everything right, at this point you should've greeted with your choice of desktop environment. Congratulations!
 
 But we're not done yet. There's more to a desktop environment than just the shell, so we have some more setup to go through.
 
@@ -207,17 +272,9 @@ The noto fonts cover the entirety of unicode, which means the majority of apps w
 sudo xbps-install noto-fonts-cjk noto-fonts-emoji noto-fonts-ttf noto-fonts-ttf-extra
 ```
 
-If you haven't done so already, you may want to install `firefox` or `chromium` now and open this page on the browser. If you had, restart the browser to apply the fonts. I'd also recommend setting noto as the system-wide "Document Text" font via the "Tweaks" app.
+If you haven't done so already, you may want to install `firefox` or `chromium` now and open this page on the browser. If you had, restart the browser to apply the fonts.
 
 With a proper browser installed, the rest of this guide should be easier to follow.
-
-### Creating the user directories
-
-By default, the typical directories found in one's home (Documents, Downloads, etc) do not exist. Because some applications *expect* them to exist, I recommend you run the following command:
-
-```Shell
-sudo xbps-install xdg-user-dirs-gtk && xdg-user-dirs-update && xdg-user-dirs-gtk-update
-```
 
 ### Running user scripts after login
 
@@ -242,7 +299,7 @@ You *could* do this by setting up user services, but I prefer to use a startup s
     ```Shell
     #!/bin/bash
     sleep 5
-    zenity --info --text="HEY!"
+    notify-send "HEY!"
     ```
 
 3.  Make it executable with:
@@ -251,13 +308,13 @@ You *could* do this by setting up user services, but I prefer to use a startup s
     chmod +x ~/.loginrc
     ```
 
-If you did everything correctly, on restarting your session a dialog saying "HEY!" should appear after a while.
+If you did everything correctly, on restarting your session a notification saying "HEY!" should appear after a while.
 
 Various parts of this guide will refer back to this section whenever a user service needs running on startup, so it is worth setting up beforehand.
 
 ### Installing an audio and media server
 
-The PipeWire media server has come a long way since its early days; I definitely recommend you set it up as your system's audio server. It'll also allow screensharing the whole desktop.
+The PipeWire media server has come a long way since its early days; I definitely recommend you set it up as your system's audio server. It'll also allow screensharing the whole desktop if your environment relies on Wayland rather than X11.
 
 1.  Begin by installing `pipewire`, `alsa-pipewire` and `rtkit`:
 
@@ -300,30 +357,36 @@ The PipeWire media server has come a long way since its early days; I definitely
 
 A session restart will be required. Afterwards, running `wpctl status` should tell you whether PipeWire has been set up correctly or not.
 
-If it is, you may go to **Settings > Sound**. You can select your output and input devices there. Make sure to test them!
+If it is, you may want to go check your sound settings. You can select your output and input devices there. Make sure to test them!
 
 For further, more advanced configuration of the audio setup see [Advanced audio configuration](../2.%20More%20Configuration/Advanced%20audio%20configuration.md).
 
-### Switching to network manager
+### Switching to NetworkManager (GNOME/KDE)
 
-By default Void Linux uses `dhcpcd` to manage your connection, which works but isn't what GNOME expects. In order to allow for network settings to be modified via the user interface, you will have to enable `NetworkManager` instead.
+If you're using GNOME or KDE, you might have seen an error trying to access network settings. That's because both expect you to be running `NetworkManager`, whereas by default Void Linux uses `dhcpcd`.
+
+In order to allow for network settings to be modified via the user interface, you will have to enable `NetworkManager` instead.
 
 ```Shell
 sudo rm /var/service/dhcpcd
 sudo ln -s /etc/sv/NetworkManager /var/service
 ```
 
-After doing this, going to **Settings > Network** should display appropiately.
+After doing this, opening network settings should display appropiately.
 
-### More GNOME configuration
+### More configuration
 
-There's a lot more you can do to improve the GNOME experience! I've only included thus far things that I'd consider basic or essential.
+There's a lot more you can do to improve the desktop experience! I've only included thus far things that I'd consider basic or essential.
 
-Definitely check out [Further configuring GNOME](../2.%20More%20Configuration/Further%20configuring%20GNOME.md) after going through this page.
+You may want to check out:
+
+- [Further configuring GNOME](../2.%20More%20Configuration/Further%20configuring%20GNOME.md)
+
+- [Further configuring XFCE](../2.%20More%20Configuration/Further%20configuring%20XFCE.md)
 
 ### Restart the session
 
-This is a good point to restart your session, specially if you did the **Creating the user directories** or **Installing an audio and media server** steps, as those require the GNOME shell to restart to fully integrate.
+This is a good point to restart your session, specially if you did GNOME or the **Installing an audio and media server** steps, as they require the shell to restart to fully integrate.
 
 You can do this by logging out and back in, or by simply rebooting the computer.
 
