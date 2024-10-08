@@ -1,14 +1,16 @@
 # Getting animated wallpapers
 
-Coming from Windows and looking for a replacement to Wallpaper Engine? You have two real options in GNOME; [Hidamari](https://github.com/jeffshee/hidamari) or [Hanabi](https://github.com/jeffshee/gnome-ext-hanabi).
+Coming from Windows and looking for a replacement to Wallpaper Engine? I can recommend a couple of options; some of which are tied to specific desktop environments.
 
-- Hidamari is pretty easy to install, supports setting video files, web videos/streams and web pages as your wallpaper, and is quite configurable.
+- [Hidamari](https://github.com/jeffshee/hidamari) is desktop environment agnostic, pretty easy to install, supports setting video files, web videos/streams and web pages as your wallpaper, and is quite configurable.
 
-  However, it leaks memory over time, it hides the activity bar when no other windows are open, and in general seems less mantained than the alternative.
+  However, it leaks memory over time, has a tendency to hide the desktop when no other windows are open, and in general seems less maintained than the alternatives.
 
-- Hanabi requires a more involved installation, only supports setting video files as wallpaper, and configuration such as randomly selecting wallpapers require scripting (which is more flexible, but complicated).
+- [Hanabi](https://github.com/jeffshee/gnome-ext-hanabi) is GNOME-specific and requires a more involved installation, only supports setting video files as wallpaper, and configuration such as randomly selecting wallpapers require scripting (which is more flexible, but complicated).
 
   However, it does not have most of the aforementioned issues for Hidamari and provides better integration with the GNOME shell (e.g. the wallpaper is animated even in the overview). The activity bar bug only occurs sometimes and can easily be fixed by disabling and re-enabling Hanabi.
+
+- [Wallpaper Engine for Kde](https://github.com/catsout/wallpaper-engine-kde-plugin) is KDE-specific and available on the [KDE Store](https://store.kde.org/p/1475528/). It is purportedly closer to Wallpaper Engine than the rest, but I haven't personally tested it - you will have to check it out for yourself. The rest of this document describes usage with Hidamari/Hanabi.
 
 ## Using Hidamari
 
