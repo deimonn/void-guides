@@ -12,7 +12,7 @@ After rebooting, go to **Settings > Keyboard** and add a new input source; press
 
 ## Making hiragana mode be the default
 
-By default, `mozc` will be on alphanumeric mode. With a japanese keyboard you can change into hiragana mode via the eisu key, but in the case you don't have one, you can make the japanese input to default to it.
+By default, `mozc` will be on alphanumeric mode. With a japanese keyboard you can change into hiragana mode via the eisu key, but in the case you don't have one, you can make the japanese input default to it.
 
 Simply open file `~/.config/mozc/ibus_config.textproto`, then on the line that says:
 
