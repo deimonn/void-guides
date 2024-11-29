@@ -6,7 +6,7 @@
 
 You have to force Windows to ignore your disk with Linux on it. I found the simplest way to do this was to just unplug my Linux one during the installation process.
 
-The issue with that is that your bootloader entry for GRUB in your BIOS may be removed afterwards (depends on the BIOS). See the [Repairing](../2.%20More%20Configuration/GRUB%20customization%20&%20repair.md#repairing) section on the GRUB guide for help in how to restore it.
+The issue with that, is that your bootloader entry for GRUB in your BIOS may be removed afterwards (depends on the BIOS). See the [Repairing](../2.%20More%20Configuration/GRUB%20customization%20&%20repair.md#repairing) section on the GRUB guide for help in how to restore it.
 
 ## Adding a GRUB entry for Windows
 
