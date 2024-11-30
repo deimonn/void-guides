@@ -1,0 +1,81 @@
+{
+    "index": "INDEX.md",
+    "categories": [
+        {
+            "name": "1. Installation",
+            "files": [
+                {
+                    "name": "Guide",
+                    "path": "1. Installation/Guide.md"
+                }
+            ]
+        },
+        {
+            "name": "2. More Configuration",
+            "files": [
+                {
+                    "name": "Advanced audio configuration",
+                    "path": "2. More Configuration/Advanced audio configuration.md"
+                },
+                {
+                    "name": "Further configuring GNOME",
+                    "path": "2. More Configuration/Further configuring GNOME.md"
+                },
+                {
+                    "name": "Further configuring XFCE",
+                    "path": "2. More Configuration/Further configuring XFCE.md"
+                },
+                {
+                    "name": "GRUB customization & repair",
+                    "path": "2. More Configuration/GRUB customization & repair.md"
+                },
+                {
+                    "name": "Windows dual-booting",
+                    "path": "2. More Configuration/Windows dual-booting.md"
+                }
+            ]
+        },
+        {
+            "name": "3. Extra Software",
+            "files": [
+                {
+                    "name": "Getting animated wallpapers",
+                    "path": "3. Extra Software/Getting animated wallpapers.md"
+                },
+                {
+                    "name": "Installing Steam",
+                    "path": "3. Extra Software/Installing Steam.md"
+                },
+                {
+                    "name": "Installing apps via Flatpak",
+                    "path": "3. Extra Software/Installing apps via Flatpak.md"
+                },
+                {
+                    "name": "Key remapping with keymapper",
+                    "path": "3. Extra Software/Key remapping with keymapper.md"
+                },
+                {
+                    "name": "Setting up japanese input",
+                    "path": "3. Extra Software/Setting up japanese input.md"
+                },
+                {
+                    "name": "Setting up virtual machines",
+                    "path": "3. Extra Software/Setting up virtual machines.md"
+                }
+            ]
+        },
+        {
+            "name": "4. Notes & Troubleshooting",
+            "files": [
+                {
+                    "name": "Black screen on screenshare",
+                    "path": "4. Notes & Troubleshooting/Black screen on screenshare.md"
+                },
+                {
+                    "name": "Missing video decoders",
+                    "path": "4. Notes & Troubleshooting/Missing video decoders.md"
+                }
+            ]
+        }
+    ]
+}
