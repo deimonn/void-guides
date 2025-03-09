@@ -10,7 +10,9 @@ Coming from Windows and looking for a replacement to Wallpaper Engine? I can rec
 
   However, it does not have most of the aforementioned issues for Hidamari and provides better integration with the GNOME shell (e.g. the wallpaper is animated even in the overview). The activity bar bug only occurs sometimes and can easily be fixed by disabling and re-enabling Hanabi.
 
-- [Wallpaper Engine for Kde](https://github.com/catsout/wallpaper-engine-kde-plugin) is KDE-specific and available on the [KDE Store](https://store.kde.org/p/1475528/). It is purportedly closer to Wallpaper Engine than the rest, but I haven't personally tested it - you will have to check it out for yourself. The rest of this document describes usage with Hidamari/Hanabi.
+- [Wallpaper Engine for Kde](https://github.com/catsout/wallpaper-engine-kde-plugin) is KDE-specific. It makes use of Wallpaper Engine files outright, so if you already have Wallpaper Engine on Steam, you can use this.
+
+  There's a couple caveats, however. Not all wallpapers will be rendered correctly; some will even **crash the desktop shell**. Configuration is also non-existent, with only the very basics being available. Still, the ability to use wallpapers from the steam workshop without having to convert them to video first is convenient - so if you're on KDE, give it a try.
 
 ## Using Hidamari
 
@@ -62,7 +64,44 @@ Hanabi by default runs much more poorly than Hidamari does. One can significantl
 
 I maintain a template for Clapper in my [void-templates](https://github.com/deimonn/void-templates) repository which makes the process easier; simply follow the usage instructions, replacing `<package-name>` with `clapper`.
 
+## Using Wallpaper Engine for Kde
+
+### Installing
+
+First off, you **will** need Steam and Wallpaper Engine to be able to download wallpapers at all; see [Installing Steam](Installing%20Steam.md). To install Wallpaper Engine, you will have to turn on "Enable Steam Play for all other titles" within **Steam Settings > Compatibility**.
+
+Secondly, while "Wallpaper Engine for Kde" can be installed [from the store](https://store.kde.org/p/2194089), it will lack the ability to render scene wallpapers, which means the vast majority of them. Thus, it will be more desirable to build it from source.
+
+I maintain a template for this plugin in my [void-templates](https://github.com/deimonn/void-templates) repository which makes the process easier; simply follow the usage instructions, replacing `<package-name>` with `wallpaper-engine-kde-plugin`.
+
+### Configuring
+
+Once you've installed it, simply open **System Settings > Wallpaper** and set the "Wallpaper type" to "Wallpaper Engine for Kde".
+
+You will have to select your library location:
+
+- If you installed steam as per [Installing Steam](Installing%20Steam.md), your library will be at `~/.local/share/Steam`
+- If you installed steam via flatpak, your library will be at `~/.var/app/com.valvesoftware.Steam/.local/share/Steam`
+
+If you did everything correctly, you should now be able to see and set wallpapers you've installed through the steam workshop.
+
+### Fixing crashes
+
+If you've managed to select a wallpaper that crashes your shell, you can restore it as follows:
+
+1.  Use `ALT + SPACE` to open the runner, then type "konsole" and press enter.
+
+2.  Open file `~/.config/plasma-org.kde.plasma.desktop-appletsrc` with a text editor, and look for a line starting with `WallpaperSource`; remove said line.
+
+3.  Start the shell again using the following command:
+
+    ```Shell
+    kstart plasmashell
+    ```
+
 ## Finding wallpapers
+
+> If you're using **Wallpaper Engine for Kde** this section is not relevant to you.
 
 By far, the easiest wallpapers to use are those in the form of video files. You can find these in many places in the internet; see [mylivewallpapers.com](https://mylivewallpapers.com/) for example.
 
