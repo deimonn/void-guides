@@ -146,12 +146,6 @@ sudo xbps-install dconf-editor
 
 Below is some of the stuff that I personally always change.
 
-### Changing the file explorer's default visible columns
-
-Inside `dconf-editor`, navigate to `/org/gnome/nautilus/list-view`; the field you're looking to edit is `default-visible-columns`.
-
-You can look at the value of `default-column-order` to tell which columns are available for display.
-
 ### Increasing the timeout limit
 
 By default, the "application is not responding" dialog appears rather prematurely on GNOME due to its ridiculously low default timeout setting (5 seconds).
