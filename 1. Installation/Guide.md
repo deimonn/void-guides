@@ -363,11 +363,12 @@ For further, more advanced configuration of the audio setup see [Advanced audio 
 
 ### Switching to NetworkManager (GNOME/KDE)
 
-If you're using GNOME or KDE, you might have seen an error trying to access network settings. That's because both expect you to be running `NetworkManager`, whereas by default Void Linux uses `dhcpcd`.
+If you're using GNOME, you might have seen an error trying to access network settings - and if you're using KDE, you might have noticed there's no icon indicating whether you have an internet connection. That's because both expect you to be running `NetworkManager`, whereas by default Void Linux uses `dhcpcd`.
 
-In order to allow for network settings to be modified via the user interface, you will have to enable `NetworkManager` instead.
+In order to allow for network settings to be modified via the user interface, you will have to enable `NetworkManager` instead:
 
 ```Shell
+sudo xbps-install NetworkManager
 sudo rm /var/service/dhcpcd
 sudo ln -s /etc/sv/NetworkManager /var/service
 ```
