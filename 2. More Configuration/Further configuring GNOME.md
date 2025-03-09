@@ -74,7 +74,7 @@ I recommend you at least restore tray icons with [this extension](https://extens
 
 ### Recommendations
 
-These are the extensions I used back when I still ran GNOME. They're still good.
+These are some extensions I can personally recommend for GNOME.
 
 - **Auto Move Windows** by fmuellner, available natively on Void. Allows one to, for example, move autostarted programs to other workspaces on login.
 
