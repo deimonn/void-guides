@@ -12,7 +12,7 @@ It also covers how to fix the GRUB bootloader if its entry got removed from BIOS
 
 You can make GRUB remember the last system you booted into; it will be already selected the next time you see the GRUB menu, meaning after the countdown finishes, it will automatically boot into that.
 
-In `etc/default/grub`, look for:
+In `/etc/default/grub`, look for:
 
 ```
 GRUB_DEFAULT=0
