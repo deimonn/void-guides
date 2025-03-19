@@ -208,7 +208,7 @@ sudo xbps-install xorg kde5 kde5-baseapps
 #### XFCE
 
 ```Shell
-sudo xbps-install xorg xfce
+sudo xbps-install xorg xfce4
 ```
 
 ### Setting up the display manager
