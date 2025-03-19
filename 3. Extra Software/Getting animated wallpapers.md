@@ -39,7 +39,7 @@ The installation of Hanabi is more involved as it works as a GNOME extension rat
 2.  Clone the `gnome-ext-hanabi` repo to a sensible location (you'll be keeping it around):
 
     ```Shell
-    git clone https://github.com/jeffshee/gnome-ext-hanabi
+    git clone https://github.com/jeffshee/gnome-ext-hanabi -b gnome-47
     ```
 
 3.  Change directory to the repository root and execute the install script:
