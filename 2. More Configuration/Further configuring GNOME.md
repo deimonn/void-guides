@@ -84,6 +84,8 @@ These are some extensions I can personally recommend for GNOME.
 
 - [AppIndicator and KStatusNotifierItem support](https://extensions.gnome.org/extension/615/appindicator-support/) by 3v1n0; mentioned ealier. Restores tray icons in GNOME, which I find pretty significant. There are other extensions that can do this but I found this one to work the best.
 
+- [Blur my Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/) by aunetx; looks absolutely gorgeous, if you're into transparency effects. Its also highly customizable and can even apply blur to applications with transparency support like [ddterm](https://extensions.gnome.org/extension/3780/ddterm/).
+
 - [Caffeine](https://extensions.gnome.org/extension/517/caffeine/) by eon is very useful to keep the screen from going off indefinitely without having to change the system settings.
 
 - [Clipboard History](https://extensions.gnome.org/extension/4839/clipboard-history/) by SUPERCILEX; once you're used to having a clipboard history, you can't live without this.
