@@ -100,28 +100,6 @@ These are some extensions I can personally recommend for GNOME.
 
 - [Transparent Top Bar](https://extensions.gnome.org/extension/3960/transparent-top-bar-adjustable-transparency/) by Gonzague; if you use programs with transparency effects, adding this on top will give you bonus style points.
 
-## Extending the GNOME theme to Qt apps
-
-The default theme of GNOME is `adwaita` and it extends to most applications, except Qt ones. This means that not only do Qt apps look noticeably different, GNOME's dark mode does not affect them.
-
-If you wish to achieve a more uniform look, you can override the Qt style.
-
-Begin by installing the `adwaita-qt` package:
-
-```Shell
-sudo xbps-install adwaita-qt
-```
-
-Afterwards, append the following to your `~/.bash_profile` file:
-
-```Bash
-export QT_STYLE_OVERRIDE=adwaita-dark # or just adwaita for light mode
-```
-
-You will have to reboot for the changes to take effect.
-
-***Note*** that some applications that do not obey GNOME's dark mode are not Qt apps, but legacy GNOME ones. For these, simply open the Tweaks app, go to Appearance, and set Legacy Applications to `Adwaita-dark` or similar.
-
 ## Creating custom color profiles
 
 You can control color tint and temperature per-monitor via ICC profiles; you can see these as applied per monitor in **Settings > Color**. Unfortunately there's no built-in way in GNOME to edit these profiles, and calibration makes use of equipment most of us aren't willing to afford.
