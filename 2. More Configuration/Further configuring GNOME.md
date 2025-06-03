@@ -98,8 +98,6 @@ These are some extensions I can personally recommend for GNOME.
 
 - [Steal my focus window](https://extensions.gnome.org/extension/6385/steal-my-focus-window/) by detro; tired of that little "*window* is ready" notification that often fails to take you to said window when you click it? So was I. This extension removes the notification and just allows windows to steal your focus without prompt.
 
-- [Transparent Top Bar](https://extensions.gnome.org/extension/3960/transparent-top-bar-adjustable-transparency/) by Gonzague; if you use programs with transparency effects, adding this on top will give you bonus style points.
-
 ## Creating custom color profiles
 
 You can control color tint and temperature per-monitor via ICC profiles; you can see these as applied per monitor in **Settings > Color**. Unfortunately there's no built-in way in GNOME to edit these profiles, and calibration makes use of equipment most of us aren't willing to afford.
