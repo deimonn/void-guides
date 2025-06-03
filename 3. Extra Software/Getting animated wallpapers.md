@@ -6,9 +6,9 @@ Coming from Windows and looking for a replacement to Wallpaper Engine? I can rec
 
   However, it leaks memory over time, has a tendency to hide the desktop when no other windows are open, and in general seems less maintained than the alternatives.
 
-- [Hanabi](https://github.com/jeffshee/gnome-ext-hanabi) is GNOME-specific and requires a more involved installation, only supports setting video files as wallpaper, and configuration such as randomly selecting wallpapers require scripting (which is more flexible, but complicated).
+- [Hanabi](https://github.com/jeffshee/gnome-ext-hanabi) is GNOME-specific and requires a more involved installation, only supports setting video files as wallpaper, and may or may not work on your system without issues.
 
-  However, it does not have most of the aforementioned issues for Hidamari and provides better integration with the GNOME shell (e.g. the wallpaper is animated even in the overview). The activity bar bug only occurs sometimes and can easily be fixed by disabling and re-enabling Hanabi.
+  However, it does provide better integration with the GNOME shell (e.g. the wallpaper is animated even in the overview). The activity bar bug only occurs sometimes and can easily be fixed by disabling and re-enabling Hanabi.
 
 - [Wallpaper Engine for Kde](https://github.com/catsout/wallpaper-engine-kde-plugin) is KDE-specific. It makes use of Wallpaper Engine files outright, so if you already have Wallpaper Engine on Steam, you can use this.
 
@@ -30,16 +30,16 @@ The installation of Hanabi is more involved as it works as a GNOME extension rat
 
 ### Installing
 
-1.  Install `git` and `meson` if you haven't already:
+1.  Install `git`, `meson` and optionally `clapper` ([severely](https://github.com/jeffshee/gnome-ext-hanabi?tab=readme-ov-file#optimization) improves the performance of Hanabi):
 
     ```Shell
-    sudo xbps-install git meson
+    sudo xbps-install git meson clapper
     ```
 
 2.  Clone the `gnome-ext-hanabi` repo to a sensible location (you'll be keeping it around):
 
     ```Shell
-    git clone https://github.com/jeffshee/gnome-ext-hanabi -b gnome-47
+    git clone https://github.com/jeffshee/gnome-ext-hanabi
     ```
 
 3.  Change directory to the repository root and execute the install script:
@@ -57,12 +57,6 @@ If at any point you wish to remove Hanabi after having installed it, simply disa
 ```Shell
 ./run.sh uninstall
 ```
-
-### Improving performance
-
-Hanabi by default runs much more poorly than Hidamari does. One can significantly improve performance by making use of the `clappersink` provided by [Clapper](https://github.com/Rafostar/clapper); however, since it is not available in the void repositories, and the flatpak version is insufficient for this purpose, it has to be built from source.
-
-I maintain a template for Clapper in my [void-templates](https://github.com/deimonn/void-templates) repository which makes the process easier; simply follow the usage instructions, replacing `<package-name>` with `clapper`.
 
 ## Using Wallpaper Engine for Kde
 
