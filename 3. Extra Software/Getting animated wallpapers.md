@@ -6,7 +6,7 @@ Coming from Windows and looking for a replacement to Wallpaper Engine? I can rec
 
   However, it leaks memory over time, has a tendency to hide the desktop when no other windows are open, and in general seems less maintained than the alternatives.
 
-- [Hanabi](https://github.com/jeffshee/gnome-ext-hanabi) is GNOME-specific and requires a more involved installation, only supports setting video files as wallpaper, and may or may not work on your system without issues.
+- [Hanabi](https://github.com/jeffshee/gnome-ext-hanabi) is GNOME-specific and requires a more involved installation, only supports setting video files as wallpaper, and may or may not work on your system without significant issues.
 
   However, it does provide better integration with the GNOME shell (e.g. the wallpaper is animated even in the overview). The activity bar bug only occurs sometimes and can easily be fixed by disabling and re-enabling Hanabi.
 
