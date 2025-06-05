@@ -74,6 +74,10 @@
                 {
                     "name": "Missing video decoders",
                     "path": "4. Notes & Troubleshooting/Missing video decoders.md"
+                },
+                {
+                    "name": "Wrongly styled title bar on GNOME",
+                    "path": "4. Notes & Troubleshooting/Wrongly styled title bar on GNOME.md"
                 }
             ]
         }
