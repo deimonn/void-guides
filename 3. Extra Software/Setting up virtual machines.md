@@ -38,4 +38,18 @@ For Windows guests, you might want to install the VirtIO drivers for improved pe
 
 3.  In "Source path", press "Browse" and select the drivers ISO. This will load the ISO as a CDROM. Afterwards simply run the "virtio-win-gt-*arch*" and "virtio-win-guest-tools" found inside the CDROM in the Windows VM.
 
-4.  In hardware details, go to NIC and set your "Device model" to virtio to restore your internet connection.
+4.  You can now optionally switch to using SCSI for I/O, which vastly improves virtual disk performance.
+
+    1.  Shutdown the virtual machine and go back to hardware details.
+
+    2.  Click "Add Hardware", select "Controller" and add a controller of type "SCSI" and model "VirtIO SCSI".
+
+    3.  Click "Add Hardware" again, this time add "Storage" with bus type "SCSI", any size. We won't really use the disk, we just need it attached.
+
+    4.  Boot the machine again. Check or wait until Windows' Device Manager shows the SCSI disk is detected (should appear as "QEMU QEMU HARDDISK SCSI Disk Device").
+
+    5.  Shutdown the machine, then detach and delete the temporary SCSI disk you added in step 6. Afterwards, detach the SATA disk and reattach it as an SCSI disk.
+
+5.  You can also optionally switch the NIC interface in hardware details to "virtio", similarly increasing performance for network I/O.
+
+    If your connection goes out after making the change, it is most likely a Windows issue. A reboot of the virtual machine usually fixes it.
