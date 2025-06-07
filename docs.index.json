@@ -80,6 +80,15 @@
                     "path": "4. Notes & Troubleshooting/Wrongly styled title bar on GNOME.md"
                 }
             ]
+        },
+        {
+            "name": "5. GPU Passthrough",
+            "files": [
+                {
+                    "name": "GPU passthrough in Void Linux",
+                    "path": "5. GPU Passthrough/GPU passthrough in Void Linux"
+                }
+            ]
         }
     ]
 }
