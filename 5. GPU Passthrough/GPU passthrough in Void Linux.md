@@ -513,30 +513,3 @@ These are far from the only things you can do to improve performance, but you ma
 For example, you can [improve performance by ~2%](https://wiki.archlinux.org/title/PCI_passthrough_via_OVMF#Static_huge_pages) by statically reserving memory at boot solely for the VM, with the caveat that it permanently locks the memory away from the host even when the VM is not running.
 
 Should you require such level of optimization, I recommend you read the [Performace tuning](https://wiki.archlinux.org/title/PCI_passthrough_via_OVMF#Performance_tuning) section of the Arch Wiki.
-
-## Miscellaneous configurations
-
-### How to 'passthrough' a physical disk
-
-Append the following next to your other `<disk>` devices in your overview XML:
-
-```XML
-<disk type="block" device="disk">
-  <driver name="qemu" type="raw" cache="writeback" io="threads" discard="unmap"/>
-  <source dev="/dev/disk/by-id/<ID>"/>
-  <target dev="<DEV>" bus="scsi"/>
-</disk>
-```
-
-- Replace `<ID>` with your disk's ID (run `ls /dev/disk/by-id` to see all).
-- Replace `<DEV>` with a linux-style device name continuing off the previous one; e.g. if the previous disk is `sdc`, make it `sdd`.
-
-Take care not to mount any partitions you make inside of it on the Linux side while the VM is still running, or you'll corrupt the filesystem.
-
-If you're not going to be accessing the disk from Linux at all, you can always append the following to your `/etc/fstab` to prevent yourself from accidentally mounting it:
-
-```
-/dev/disk/by-id/<ID>-part<N> /mnt/<ID>-part<N> auto noauto,x-udisks-auth 0 0
-```
-
-Replace `<ID>` and `<N>` as appropiate. This should hide the partition from most file managers.
