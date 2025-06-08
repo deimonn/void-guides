@@ -231,9 +231,9 @@ Now we have to set up the virtual machine that we will pass the GPU to.
 
 10. Next, we'll set up your keyboard and mouse to toggle between the host and the guest by pressing both CTRL keys at the same time.
 
-    First determine which devices are your keyboard and mouse in `/etc/input/by-id`; you only care for devices with `event` in their name. Try to `cat` each one to see which produce output when you wiggle your mouse or type some letters.
+    First determine which devices are your keyboard and mouse in `/dev/input/by-id`; you only care for devices with `event` in their name. Try to `cat` each one to see which produce output when you wiggle your mouse or type some letters.
 
-    If no device in `/etc/input/by-id` produces any output when `cat`'d, it is possible you have some intercepting service set up, like keymapper (see [Keymapper and PCI passthrough](../3.%20Extra%20Software/Key%20remapping%20with%20keymapper.md#keymapper-and-pci-passthrough)). You will have to either disable it or configure it in some manner.
+    If no device in `/dev/input/by-id` produces any output when `cat`'d, it is possible you have some intercepting service set up, like keymapper (see [Keymapper and PCI passthrough](../3.%20Extra%20Software/Key%20remapping%20with%20keymapper.md#keymapper-and-pci-passthrough)). You will have to either disable it or configure it in some manner.
 
     Search for the following two lines:
 
