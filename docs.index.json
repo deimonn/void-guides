@@ -76,6 +76,10 @@
                     "path": "4. Notes & Troubleshooting/Missing video decoders.md"
                 },
                 {
+                    "name": "NetworkManager not running",
+                    "path": "4. Notes & Troubleshooting/NetworkManager not running.md"
+                },
+                {
                     "name": "Wrongly styled title bar on GNOME",
                     "path": "4. Notes & Troubleshooting/Wrongly styled title bar on GNOME.md"
                 }

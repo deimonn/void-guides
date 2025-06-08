@@ -361,20 +361,6 @@ If it is, you may want to go check your sound settings. You can select your outp
 
 For further, more advanced configuration of the audio setup see [Advanced audio configuration](../2.%20More%20Configuration/Advanced%20audio%20configuration.md).
 
-### Switching to NetworkManager (GNOME/KDE)
-
-If you're using GNOME, you might have seen an error trying to access network settings - and if you're using KDE, you might have noticed there's no icon indicating whether you have an internet connection. That's because both expect you to be running `NetworkManager`, whereas by default Void Linux uses `dhcpcd`.
-
-In order to allow for network settings to be modified via the user interface, you will have to enable `NetworkManager` instead:
-
-```Shell
-sudo xbps-install NetworkManager
-sudo rm /var/service/dhcpcd
-sudo ln -s /etc/sv/NetworkManager /var/service
-```
-
-After doing this, opening network settings should display appropiately.
-
 ### More configuration
 
 There's a lot more you can do to improve the desktop experience! I've only included thus far things that I'd consider basic or essential.
