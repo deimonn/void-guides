@@ -318,10 +318,10 @@ Various parts of this guide will refer back to this section whenever a user serv
 
 The PipeWire media server has come a long way since its early days; I definitely recommend you set it up as your system's audio server. It'll also allow screensharing the whole desktop if your environment relies on Wayland rather than X11.
 
-1.  Begin by installing `pipewire`, `alsa-pipewire` and `rtkit`:
+1.  Begin by installing `pipewire` and `alsa-pipewire`:
 
     ```Shell
-    sudo xbps-install pipewire alsa-pipewire rtkit
+    sudo xbps-install pipewire alsa-pipewire
     ```
 
 2.  Create the `/etc/pipewire/pipewire.conf.d` directory:
