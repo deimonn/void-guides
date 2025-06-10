@@ -55,7 +55,7 @@ You're free to use your own choice of editor, though.
 
 ### Setting up a swap file
 
-If you skipped setting up a swap partition like I did, you might still want to setup a swap file (having some form of swap is always good).
+If you skipped setting up a swap partition, you might still want to setup a swap file, depending on your needs.
 
 1.  To begin, allocate the desired amount of swap space as a file (replace `<SIZE>` on the following command):
 
@@ -63,7 +63,7 @@ If you skipped setting up a swap partition like I did, you might still want to s
     sudo fallocate -l <SIZE> /swapfile
     ```
 
-    I use `8GiB`.
+    E.g. `8GiB`.
 
 2.  Update its permissions so only the root user can write and read to it:
 
