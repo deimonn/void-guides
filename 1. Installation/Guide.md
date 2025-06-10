@@ -30,6 +30,18 @@ sudo xbps-install -u xbps
 sudo xbps-install -Su
 ```
 
+### Disable `sshd`
+
+Void's live image comes with the `sshd` service enabled. While this is great for headless installs, it is a security concern once your system is up and running, specially if you chose a simple password for your account.
+
+Disable it with:
+
+```Shell
+sudo rm /var/service/sshd
+```
+
+You can always configure and re-enable it at a later time.
+
 ### Installing a text editor
 
 Before we get on with the rest of the guide, I recommend you get a text editor; `nano` is pretty good for editing text files on the command line:
