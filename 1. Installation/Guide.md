@@ -32,7 +32,7 @@ sudo xbps-install -Su
 
 ### Installing a text editor
 
-Before we get on with the rest of the guide, I recommend you get a text editor; `nano` for is pretty good for editing text files on the command line:
+Before we get on with the rest of the guide, I recommend you get a text editor; `nano` is pretty good for editing text files on the command line:
 
 ```Shell
 sudo xbps-install nano
