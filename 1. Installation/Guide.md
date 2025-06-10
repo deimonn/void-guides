@@ -86,21 +86,11 @@ If you skipped setting up a swap partition like I did, you might still want to s
 
 You can verify your swap is active by running `sudo swapon --show`.
 
-### Syncing the time with NTP
+### Checking that `date` is correct
 
-The NTP daemon will keep your system clock synced via internet connection. Install the package with:
+Void's live image comes with the Chrony service already enabled, so your system clock should already be getting synced via internet connection.
 
-```Shell
-sudo xbps-install ntp
-```
-
-Enable the service with:
-
-```Shell
-sudo ln -s /etc/sv/isc-ntpd /var/service
-```
-
-If running `date` returns an incorrect result after this, its very likely your hardware clock is not on the correct time setting.
+You can check by running the `date` command. If it returns an incorrect result, its very likely your hardware clock is not on the correct time setting.
 
 - Check whether it is correct with `sudo hwclock --localtime`; if its correct with this setting, then its most likely because you've booted Windows before.
 
