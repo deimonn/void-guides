@@ -38,7 +38,7 @@ For Windows guests, you might want to install the VirtIO drivers for improved pe
 
 3.  In "Source path", press "Browse" and select the drivers ISO. This will load the ISO as a CDROM. Afterwards simply run the "virtio-win-gt-*arch*" and "virtio-win-guest-tools" found inside the CDROM in the Windows VM.
 
-4.  You can now optionally switch to using SCSI for I/O, which vastly improves virtual disk performance.
+4.  You can now optionally switch to using SCSI for I/O, which significantly improves virtual disk performance.
 
     1.  Shutdown the virtual machine and go back to hardware details.
 
