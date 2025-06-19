@@ -463,39 +463,39 @@ Example configuration:
 
 You can set up SCSI to use a dedicated I/O thread as discussed in CPU pinning above.
 
-In the overview XML, look for your `<disk>` device. It will look something like:
+1. In the overview XML, look for your SCSI `<disk>` device. It will look something like:
 
-```XML
-<disk type="file" device="disk">
-  <driver name="qemu" type="qcow2"/>
-  <source file="/var/lib/libvirt/images/win10.qcow2"/>
-  <target dev="sdc" bus="scsi"/>
-  <address type="drive" controller="0" bus="0" target="0" unit="2"/>
-</disk>
-```
+  ```XML
+  <disk type="file" device="disk">
+    <driver name="qemu" type="qcow2"/>
+    <source file="/var/lib/libvirt/images/win10.qcow2"/>
+    <target dev="sdc" bus="scsi"/>
+    <address type="drive" controller="0" bus="0" target="0" unit="2"/>
+  </disk>
+  ```
 
-To the `<driver>` element, append `io="threads" cache="writeback" discard="unmap"`, like:
+  To the `<driver>` element, append `io="threads" cache="writeback" discard="unmap"`, like:
 
-```XML
-<driver name="qemu" type="qcow2" io="threads" cache="writeback" discard="unmap"/>
-```
+  ```XML
+  <driver name="qemu" type="qcow2" io="threads" cache="writeback" discard="unmap"/>
+  ```
 
-Next, look for a `<controller type="scsi">`, like:
+2. Next, look for a `<controller type="scsi">`, like:
 
-```XML
-<controller type="scsi" index="0" model="virtio-scsi">
-  <address type="pci" domain="0x0000" bus="0x05" slot="0x00" function="0x0"/>
-</controller>
-```
+  ```XML
+  <controller type="scsi" index="0" model="virtio-scsi">
+    <address type="pci" domain="0x0000" bus="0x05" slot="0x00" function="0x0"/>
+  </controller>
+  ```
 
-Append `<driver iothread="1" queues="8"/>` to the `<controller>` contents to enable the I/O thread:
+  Append `<driver iothread="1" queues="8"/>` to the `<controller>` contents to enable the I/O thread:
 
-```XML
-<controller ...>
-  ...
-  <driver iothread="1" queues="8"/>
-</controller>
-```
+  ```XML
+  <controller ...>
+    ...
+    <driver iothread="1" queues="8"/>
+  </controller>
+  ```
 
 ### Enabling `topoext`
 
