@@ -402,14 +402,24 @@ You can remediate this issue by pinning the threads to specific physical CPUs.
 5.  Look for the `<cpu>` block, which will look something like:
 
     ```XML
-    <cpu mode="host-passthrough" .../>
+    <cpu mode="host-passthrough" check="none" migratable="on"/>
     ```
 
-    Expand it to a full element and insert `<topology sockets="1" cores="<CORES>" threads="<THREADS>"/>` inside of it. Like this:
+    Replace `migratable="on"` with `migratable="off"`.
+
+    Afterwards, expand it to a full element, and inside of it insert:
 
     ```XML
-    <cpu mode="host-passthrough" ...>
+    <topology sockets="1" cores="<CORES>" threads="<THREADS>"/>
+    <cache mode="passthrough"/>
+    ```
+
+    Like this:
+
+    ```XML
+    <cpu mode="host-passthrough" check="none" migratable="off">
       <topology sockets="1" cores="<CORES>" threads="<THREADS>"/>
+      <cache mode="passthrough"/>
     </cpu>
     ```
 
@@ -452,8 +462,9 @@ Example configuration:
   <emulatorpin cpuset="26"/>
   <iothreadpin iothread="1" cpuset="27"/>
 </cputune>
-<cpu mode="host-passthrough" check="none" migratable="on">
+<cpu mode="host-passthrough" migratable="off">
   <topology sockets="1" cores="26" threads="1"/>
+  <cache mode="passthrough"/>
 </cpu>
 <iothreads>1</iothreads>
 ```
