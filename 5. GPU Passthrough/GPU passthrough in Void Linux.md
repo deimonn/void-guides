@@ -380,7 +380,7 @@ You can remediate this issue by pinning the threads to specific physical CPUs.
 
     You can specify multiple CPUs using a comma, like `cpuset="0,1"`, as you still want to keep CPUs sharing L1/L2 caches together.
 
-4.  If you switched your disk to SCSI during [Creating the virtual machine](#creating-the-virtual-machine), you can benefit from having a pinned I/O thread too. Add it with:
+4.  You can benefit from having a pinned I/O thread too. Add it with:
 
     ```XML
     <cputune>
