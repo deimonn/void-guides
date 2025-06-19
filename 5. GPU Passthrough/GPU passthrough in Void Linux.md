@@ -514,3 +514,15 @@ These are far from the only things you can do to improve performance, but you ma
 For example, you can [improve performance by ~2%](https://wiki.archlinux.org/title/PCI_passthrough_via_OVMF#Static_huge_pages) by statically reserving memory at boot solely for the VM, with the caveat that it permanently locks the memory away from the host even when the VM is not running.
 
 Should you require such level of optimization, I recommend you read the [Performace tuning](https://wiki.archlinux.org/title/PCI_passthrough_via_OVMF#Performance_tuning) section of the Arch Wiki.
+
+## Final notes
+
+### Ignoring disks in snapshots
+
+If you have disks that you wish to leave as-is on snapshots (for example, such that only the disk containing Windows is snapshotted), you can simply append `snapshot="no"` to the `<disk>` device to ignore, like:
+
+```XML
+<disk type="file" device="disk" snapshot="no">
+  ...
+</disk>
+```
