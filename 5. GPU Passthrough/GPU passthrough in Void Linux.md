@@ -353,7 +353,7 @@ You can remediate this issue by pinning the threads to specific physical CPUs.
 2.  Having figured out which physical CPUs you wish to pin for the guest, look for a `<vcpu>` element in the overview XML:
 
     ```XML
-    <vcpu placement="static">26</vcpu>
+    <vcpu placement="static">16</vcpu>
     ```
 
     Below it, append the following:
@@ -431,7 +431,7 @@ You can remediate this issue by pinning the threads to specific physical CPUs.
 Example configuration:
 
 ```XML
-<vcpu placement="static">26</vcpu>
+<vcpu placement="static">16</vcpu>
 <cputune>
   <vcpupin vcpu="0" cpuset="0"/>
   <vcpupin vcpu="1" cpuset="1"/>
@@ -449,21 +449,11 @@ Example configuration:
   <vcpupin vcpu="13" cpuset="13"/>
   <vcpupin vcpu="14" cpuset="14"/>
   <vcpupin vcpu="15" cpuset="15"/>
-  <vcpupin vcpu="16" cpuset="16"/>
-  <vcpupin vcpu="17" cpuset="17"/>
-  <vcpupin vcpu="18" cpuset="18"/>
-  <vcpupin vcpu="19" cpuset="19"/>
-  <vcpupin vcpu="20" cpuset="20"/>
-  <vcpupin vcpu="21" cpuset="21"/>
-  <vcpupin vcpu="22" cpuset="22"/>
-  <vcpupin vcpu="23" cpuset="23"/>
-  <vcpupin vcpu="24" cpuset="24"/>
-  <vcpupin vcpu="25" cpuset="25"/>
-  <emulatorpin cpuset="26"/>
-  <iothreadpin iothread="1" cpuset="27"/>
+  <emulatorpin cpuset="16"/>
+  <iothreadpin iothread="1" cpuset="17"/>
 </cputune>
 <cpu mode="host-passthrough" migratable="off">
-  <topology sockets="1" cores="26" threads="1"/>
+  <topology sockets="1" cores="8" threads="2"/>
   <cache mode="passthrough"/>
 </cpu>
 <iothreads>1</iothreads>
