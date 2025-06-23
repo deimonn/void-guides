@@ -526,3 +526,28 @@ If you have disks that you wish to leave as-is on snapshots (for example, such t
   ...
 </disk>
 ```
+
+### Physical disk passthrough
+
+To passthrough a physical disk, append the following next to your other `<disk>` devices in your overview XML:
+
+```XML
+<disk type="block" device="disk" snapshot="no">
+  <driver name="qemu" type="raw" cache="none" io="native"/>
+  <source dev="/dev/disk/by-id/<ID>"/>
+  <target dev="<DEV>" bus="sata"/>
+</disk>
+```
+
+- Replace `<ID>` with your disk's ID (run `ls /dev/disk/by-id` to see all).
+- Replace `<DEV>` with a linux-style device name continuing off the previous one; e.g. if the previous disk is `sdc`, make it `sdd`.
+
+Take care not to mount any partitions you make inside of it on the Linux side while the VM is still running, or you'll corrupt the filesystem.
+
+If you're not going to be accessing the disk from Linux at all, you can always append the following to your `/etc/fstab` to prevent yourself from accidentally mounting it:
+
+```
+/dev/disk/by-id/<ID>-part<N> /mnt/<ID>-part<N> auto noauto,x-udisks-auth 0 0
+```
+
+Replace `<ID>` and `<N>` as appropiate. This should hide the partition from most file managers.
