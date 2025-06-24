@@ -52,4 +52,4 @@ For Windows guests, you might want to install the VirtIO drivers for improved pe
 
 5.  You can also optionally switch the NIC interface in hardware details to "virtio", similarly increasing performance for network I/O.
 
-    If your connection goes out after making the change, it is most likely a Windows issue. A reboot of the virtual machine usually fixes it.
+    If your connection goes out after making the change, it is most likely a Windows issue. Shutting down and starting the virtual machine again usually fixes it.
