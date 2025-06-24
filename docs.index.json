@@ -95,6 +95,10 @@
                 {
                     "name": "GPU passthrough in Void Linux",
                     "path": "5. GPU Passthrough/GPU passthrough in Void Linux.md"
+                },
+                {
+                    "name": "Hiding virtualization details",
+                    "path": "5. GPU Passthrough/Hiding virtualization details.md"
                 }
             ]
         }
