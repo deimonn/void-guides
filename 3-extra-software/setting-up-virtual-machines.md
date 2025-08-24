@@ -52,4 +52,23 @@ For Windows guests, you might want to install the VirtIO drivers for improved pe
 
 5.  You can also optionally switch the NIC interface in hardware details to "virtio", similarly increasing performance for network I/O.
 
-    If your connection goes out after making the change, it is most likely a Windows issue. Shutting down and starting the virtual machine again usually fixes it.
+    If your connection goes out after making the change, see below.
+
+## Troubleshooting
+
+### *Sometimes* VM starts without an internet connection
+
+There's a randomly occurring bug with either libvirt or virt-manager where it seems to fail to enable the virtual network and bridge devices. You can confirm this by running:
+
+```Shell
+ip link
+```
+
+If the VM **is running** but `virbr0` and `vnet0` are set to `DOWN`, then it bugged out.
+
+You can either shut down and start the virtual machine again to fix it, or manually set the devices to `UP` with:
+
+```Shell
+sudo ip link set up virbr0
+sudo ip link set up vnet0
+```
