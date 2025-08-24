@@ -1,12 +1,12 @@
 {
-    "index": "INDEX.md",
+    "index": "index.md",
     "categories": [
         {
             "name": "1. Installation",
             "files": [
                 {
                     "name": "Guide",
-                    "path": "1. Installation/Guide.md"
+                    "path": "1-installation/guide.md"
                 }
             ]
         },
@@ -15,23 +15,23 @@
             "files": [
                 {
                     "name": "Advanced audio configuration",
-                    "path": "2. More Configuration/Advanced audio configuration.md"
+                    "path": "2-more-configuration/advanced-audio-configuration.md"
                 },
                 {
                     "name": "Further configuring GNOME",
-                    "path": "2. More Configuration/Further configuring GNOME.md"
+                    "path": "2-more-configuration/further-configuring-gnome.md"
                 },
                 {
                     "name": "Further configuring XFCE",
-                    "path": "2. More Configuration/Further configuring XFCE.md"
+                    "path": "2-more-configuration/further-configuring-xfce.md"
                 },
                 {
                     "name": "GRUB customization & repair",
-                    "path": "2. More Configuration/GRUB customization & repair.md"
+                    "path": "2-more-configuration/grub-customization-repair.md"
                 },
                 {
                     "name": "Windows dual-booting",
-                    "path": "2. More Configuration/Windows dual-booting.md"
+                    "path": "2-more-configuration/windows-dual-booting.md"
                 }
             ]
         },
@@ -40,27 +40,27 @@
             "files": [
                 {
                     "name": "Getting animated wallpapers",
-                    "path": "3. Extra Software/Getting animated wallpapers.md"
+                    "path": "3-extra-software/getting-animated-wallpapers.md"
                 },
                 {
                     "name": "Installing Steam",
-                    "path": "3. Extra Software/Installing Steam.md"
+                    "path": "3-extra-software/installing-steam.md"
                 },
                 {
                     "name": "Installing apps via Flatpak",
-                    "path": "3. Extra Software/Installing apps via Flatpak.md"
+                    "path": "3-extra-software/installing-apps-via-flatpak.md"
                 },
                 {
                     "name": "Key remapping with keymapper",
-                    "path": "3. Extra Software/Key remapping with keymapper.md"
+                    "path": "3-extra-software/key-remapping-with-keymapper.md"
                 },
                 {
                     "name": "Setting up japanese input",
-                    "path": "3. Extra Software/Setting up japanese input.md"
+                    "path": "3-extra-software/setting-up-japanese-input.md"
                 },
                 {
                     "name": "Setting up virtual machines",
-                    "path": "3. Extra Software/Setting up virtual machines.md"
+                    "path": "3-extra-software/setting-up-virtual-machines.md"
                 }
             ]
         },
@@ -69,23 +69,23 @@
             "files": [
                 {
                     "name": "Black screen on screenshare",
-                    "path": "4. Notes & Troubleshooting/Black screen on screenshare.md"
+                    "path": "4-notes-troubleshooting/black-screen-on-screenshare.md"
                 },
                 {
                     "name": "Bluetooth device keeps erroring",
-                    "path": "4. Notes & Troubleshooting/Bluetooth device keeps erroring.md"
+                    "path": "4-notes-troubleshooting/bluetooth-device-keeps-erroring.md"
                 },
                 {
                     "name": "Missing video decoders",
-                    "path": "4. Notes & Troubleshooting/Missing video decoders.md"
+                    "path": "4-notes-troubleshooting/missing-video-decoders.md"
                 },
                 {
                     "name": "NetworkManager not running",
-                    "path": "4. Notes & Troubleshooting/NetworkManager not running.md"
+                    "path": "4-notes-troubleshooting/networkmanager-not-running.md"
                 },
                 {
                     "name": "Wrongly styled title bar on GNOME",
-                    "path": "4. Notes & Troubleshooting/Wrongly styled title bar on GNOME.md"
+                    "path": "4-notes-troubleshooting/wrongly-styled-title-bar-on-gnome.md"
                 }
             ]
         },
@@ -94,11 +94,11 @@
             "files": [
                 {
                     "name": "GPU passthrough in Void Linux",
-                    "path": "5. GPU Passthrough/GPU passthrough in Void Linux.md"
+                    "path": "5-gpu-passthrough/gpu-passthrough-in-void-linux.md"
                 },
                 {
                     "name": "Hiding virtualization details",
-                    "path": "5. GPU Passthrough/Hiding virtualization details.md"
+                    "path": "5-gpu-passthrough/hiding-virtualization-details.md"
                 }
             ]
         }

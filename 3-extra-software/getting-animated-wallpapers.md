@@ -16,7 +16,7 @@ Coming from Windows and looking for a replacement to Wallpaper Engine? I can rec
 
 ## Using Hidamari
 
-Hidamari is pretty easy to install as it is available from the [FlatHub](Installing%20apps%20via%20Flatpak.md):
+Hidamari is pretty easy to install as it is available from the [FlatHub](installing-apps-via-flatpak.md):
 
 ```
 flatpak install flathub io.github.jeffshee.Hidamari
@@ -62,7 +62,7 @@ If at any point you wish to remove Hanabi after having installed it, simply disa
 
 ### Installing
 
-First off, you **will** need Steam and Wallpaper Engine to be able to download wallpapers at all; see [Installing Steam](Installing%20Steam.md). To install Wallpaper Engine, you will have to turn on "Enable Steam Play for all other titles" within **Steam Settings > Compatibility**.
+First off, you **will** need Steam and Wallpaper Engine to be able to download wallpapers at all; see [Installing Steam](installing-steam.md). To install Wallpaper Engine, you will have to turn on "Enable Steam Play for all other titles" within **Steam Settings > Compatibility**.
 
 Secondly, while "Wallpaper Engine for Kde" can be installed [from the store](https://store.kde.org/p/2194089), it will lack the ability to render scene wallpapers, which means the vast majority of them. Thus, it will be more desirable to build it from source.
 
@@ -74,7 +74,7 @@ Once you've installed it, simply open **System Settings > Wallpaper** and set th
 
 You will have to select your library location:
 
-- If you installed steam as per [Installing Steam](Installing%20Steam.md), your library will be at `~/.local/share/Steam`
+- If you installed steam as per [Installing Steam](installing-steam.md), your library will be at `~/.local/share/Steam`
 - If you installed steam via flatpak, your library will be at `~/.var/app/com.valvesoftware.Steam/.local/share/Steam`
 
 If you did everything correctly, you should now be able to see and set wallpapers you've installed through the steam workshop.
@@ -101,7 +101,7 @@ By far, the easiest wallpapers to use are those in the form of video files. You 
 
 If you have Wallpaper Engine on Steam, you can extract video and web wallpapers you've subscribed to from its steam workshop folder:
 
-1.  Open Steam (assuming you've already installed it; see [Installing Steam](Installing%20Steam.md)), then go to **Settings > Compatibility** and check **Enable Steam Play for all other titles**. You will have to restart Steam.
+1.  Open Steam (assuming you've already installed it; see [Installing Steam](installing-steam.md)), then go to **Settings > Compatibility** and check **Enable Steam Play for all other titles**. You will have to restart Steam.
 
 2.  Install Wallpaper Engine (don't bother running it; it won't).
 

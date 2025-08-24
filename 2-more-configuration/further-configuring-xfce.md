@@ -2,7 +2,7 @@
 
 XFCE markets itself as a lightweight desktop environment, however lightweight does not mean devoid of aesthetic - it sports a very high level of customizability even compared to behemoths like GNOME.
 
-When you first come into contact with XFCE, perhaps through the Void live image, you may be a little horrified at how it looks and give it a pass. However, you can achieve a lot more with just a little effort and creativity. [Here's a peek](../Screenshots/xfce.png) of my haphazard server install (if you're wondering, that is the Yaru theme).
+When you first come into contact with XFCE, perhaps through the Void live image, you may be a little horrified at how it looks and give it a pass. However, you can achieve a lot more with just a little effort and creativity. [Here's a peek](../screenshots/xfce.png) of my haphazard server install (if you're wondering, that is the Yaru theme).
 
 ## Look at the settings
 

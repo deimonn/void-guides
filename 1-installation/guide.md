@@ -106,7 +106,7 @@ You can check by running the `date` command. If it returns an incorrect result, 
 
 - Check whether it is correct with `sudo hwclock --localtime`; if its correct with this setting, then its most likely because you've booted Windows before.
 
-  Windows likes `localtime`, whereas Linux prefers `utc`. You can force Windows to use `utc`; see [Windows dual-booting](../2.%20More%20Configuration/Windows%20dual-booting.md).
+  Windows likes `localtime`, whereas Linux prefers `utc`. You can force Windows to use `utc`; see [Windows dual-booting](../2-more-configuration/windows-dual-booting.md).
 
   To set the hardware clock back to utc from linux, run `sudo hwclock --systohc --utc`.
 
@@ -361,7 +361,7 @@ A session restart will be required. Afterwards, running `wpctl status` should te
 
 If it is, you may want to go check your sound settings. You can select your output and input devices there. Make sure to test them!
 
-For further, more advanced configuration of the audio setup see [Advanced audio configuration](../2.%20More%20Configuration/Advanced%20audio%20configuration.md).
+For further, more advanced configuration of the audio setup see [Advanced audio configuration](../2-more-configuration/advanced-audio-configuration.md).
 
 ### More configuration
 
@@ -369,9 +369,9 @@ There's a lot more you can do to improve the desktop experience! I've only inclu
 
 You may want to check out:
 
-- [Further configuring GNOME](../2.%20More%20Configuration/Further%20configuring%20GNOME.md)
+- [Further configuring GNOME](../2-more-configuration/further-configuring-gnome.md)
 
-- [Further configuring XFCE](../2.%20More%20Configuration/Further%20configuring%20XFCE.md)
+- [Further configuring XFCE](../2-more-configuration/further-configuring-xfce.md)
 
 ### Restart the session
 

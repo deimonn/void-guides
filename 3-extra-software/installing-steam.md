@@ -15,7 +15,7 @@ sudo xbps-install -S
 
 ## Installing a 32-bit graphics driver
 
-This is just like the [Installing the graphics driver](../1.%20Installation/Guide.md#installing-the-graphics-driver) section of the installation guide, but this time we're dealing with 32-bit package names.
+This is just like the [Installing the graphics driver](../1-installation/guide.md#installing-the-graphics-driver) section of the installation guide, but this time we're dealing with 32-bit package names.
 
 ### AMD GPU
 

@@ -15,4 +15,4 @@ sudo ln -s /etc/sv/bluetoothd /var/service
 
 Replace `<USER>` with your user name.
 
-Note that `libspa-bluetooth` is for PipeWire (which is the media server that I explained how to set up in the [Installation Guide](../1.%20Installation/Guide.md)). If you're using a different audio server, see the [Void Linux Handbook](https://docs.voidlinux.org/config/bluetooth.html).
+Note that `libspa-bluetooth` is for PipeWire (which is the media server that I explained how to set up in the [Installation Guide](../1-installation/guide.md)). If you're using a different audio server, see the [Void Linux Handbook](https://docs.voidlinux.org/config/bluetooth.html).

@@ -142,7 +142,7 @@ If for any reason you installed the `nouveau` or `nvidia` drivers before this st
 
 Now we have to set up the virtual machine that we will pass the GPU to.
 
-1.  Begin by performing the setup steps of [Setting up virtual machines](../3.%20Extra%20Software/Setting%20up%20virtual%20machines.md) (everything before **Creating a virtual machine**) if you haven't already.
+1.  Begin by performing the setup steps of [Setting up virtual machines](../3-extra-software/setting-up-virtual-machines.md) (everything before **Creating a virtual machine**) if you haven't already.
 
 2.  Install `edk2-ovmf`:
 
@@ -159,7 +159,7 @@ Now we have to set up the virtual machine that we will pass the GPU to.
 
 5.  Click "Begin installation" and install the OS as per usual.
 
-6.  Install and set up [VirtIO for Windows](../3.%20Extra%20Software/Setting%20up%20virtual%20machines.md#virtio-for-windows). Switching the disk to SCSI and NIC to `virtio` is optional but recommended.
+6.  Install and set up [VirtIO for Windows](../3-extra-software/setting-up-virtual-machines.md#virtio-for-windows). Switching the disk to SCSI and NIC to `virtio` is optional but recommended.
 
 7.  With the machine off, click "Add Hardware", and add your Nvidia GPU as a "PCI Host Device" along with any other PCI devices you wish to pass.
 
@@ -233,7 +233,7 @@ Now we have to set up the virtual machine that we will pass the GPU to.
 
     First determine which devices are your keyboard and mouse in `/dev/input/by-id`; you only care for devices with `event` in their name. Try to `cat` each one to see which produce output when you wiggle your mouse or type some letters.
 
-    If no device in `/dev/input/by-id` produces any output when `cat`'d, it is possible you have some intercepting service set up, like keymapper (see [Keymapper and PCI passthrough](../3.%20Extra%20Software/Key%20remapping%20with%20keymapper.md#keymapper-and-pci-passthrough)). You will have to either disable it or configure it in some manner.
+    If no device in `/dev/input/by-id` produces any output when `cat`'d, it is possible you have some intercepting service set up, like keymapper (see [Keymapper and PCI passthrough](../3-extra-software/key-remapping-with-keymapper.md#keymapper-and-pci-passthrough)). You will have to either disable it or configure it in some manner.
 
     Search for the following two lines:
 
@@ -255,7 +255,7 @@ Now we have to set up the virtual machine that we will pass the GPU to.
 
     Replace `<MOUSE>` and `<KEYBOARD>` with the corresponding names as found in `/etc/input/by-id`.
 
-11. Lastly, we'll set up audio forwarding. I am assuming you are using PipeWire, as per the [Installation Guide](../1.%20Installation/Guide.md).
+11. Lastly, we'll set up audio forwarding. I am assuming you are using PipeWire, as per the [Installation Guide](../1-installation/guide.md).
 
     In the overview XML, look for:
 
@@ -554,4 +554,4 @@ Replace `<ID>` and `<N>` as appropiate. This should hide the partition from most
 
 ### Can't open app due to virtualization
 
-If some applications refuse to open on detecting that you're running on a virtual machine, you may want to go through the steps of [Hiding virtualization details](Hiding%20virtualization%20details.md). It won't work for all applications, but it can help with many.
+If some applications refuse to open on detecting that you're running on a virtual machine, you may want to go through the steps of [Hiding virtualization details](hiding-virtualization-details.md). It won't work for all applications, but it can help with many.

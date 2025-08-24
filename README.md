@@ -2,7 +2,7 @@
 
 This repository holds the source documents of various [Void Linux](https://www.voidlinux.org) guides. You can read these from [my own website](https://deimonn.dev/view?r=void-guides), or just from GitHub itself.
 
-See [INDEX.md](INDEX.md).
+See [index.md](index.md).
 
 ## Licensing
 

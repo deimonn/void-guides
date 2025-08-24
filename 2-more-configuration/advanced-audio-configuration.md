@@ -40,7 +40,7 @@ By default, the sink won't send audio anywhere, and the source will be completel
 
 Any sinks and sources you create using the above method will be destroyed as soon as you restart the session, so you'll have to create them again.
 
-You can automate this process via your `~/.loginrc` file, if you followed [Running user scripts after login](../1.%20Installation/Guide.md#running-user-scripts-after-login).
+You can automate this process via your `~/.loginrc` file, if you followed [Running user scripts after login](../1-installation/guide.md#running-user-scripts-after-login).
 
 Append the following:
 
