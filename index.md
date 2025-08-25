@@ -1,4 +1,4 @@
-# Deimonn's Void Guides
+# Void Guides
 
 This documentation holds various guides to doing stuff in [Void Linux](https://www.voidlinux.org). I originally wrote these as install notes, then rewrote them to be agnostic - and then they started growing a lot.
 
