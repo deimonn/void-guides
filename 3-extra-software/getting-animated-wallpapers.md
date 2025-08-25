@@ -95,7 +95,7 @@ If you've managed to select a wallpaper that crashes your shell, you can restore
 
 ## Finding wallpapers
 
-> If you're using **Wallpaper Engine for Kde** this section is not relevant to you.
+> ℹ️ If you're using **Wallpaper Engine for Kde** this section is not relevant to you.
 
 By far, the easiest wallpapers to use are those in the form of video files. You can find these in many places in the internet; see [mylivewallpapers.com](https://mylivewallpapers.com/) for example.
 
