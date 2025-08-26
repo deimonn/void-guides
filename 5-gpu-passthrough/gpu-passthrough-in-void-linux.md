@@ -298,7 +298,7 @@ Although this may sound counter-intuitive, it is worthwhile to reserve a couple 
 
 This is because many operations (like disk I/O) still need to be handled by QEMU on the host, so if all resources are hogged by the guest and the host can't process things fast enough, the guest too will lag.
 
-I personally reserve 2 cores for host operation; how many you actually need depends on how much work your host will continue doing in the background.
+You should probably reserve at least 2 cores for host operation, but how many you actually need depends on how much work your host will continue doing in the background.
 
 ### CPU pinning
 
