@@ -1,4 +1,4 @@
-# Void Linux plus Desktop Installation Guide
+# Installation Guide
 
 A guide to installing Void Linux and setting up a desktop environment, along with a plethora of other smaller configurations.
 
@@ -59,7 +59,7 @@ include /usr/share/nano/extra/*.nanorc
 
 And set it as the default editor by appending the following to either `~/.bashrc` or `~/.bash_profile`:
 
-```Bash
+```Shell
 export EDITOR=nano
 ```
 
