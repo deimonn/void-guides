@@ -159,7 +159,7 @@ Now we have to set up the virtual machine that we will pass the GPU to.
 
 5.  Click "Begin installation" and install the OS as per usual.
 
-6.  Install and set up [VirtIO for Windows](../3-extra-software/setting-up-virtual-machines.md#virtio-for-windows). Switching the disk to SCSI and NIC to `virtio` is optional but recommended.
+6.  Install and set up [VirtIO for Windows](../3-extra-software/setting-up-virtual-machines.md#virtio-for-windows). Switching the disk to "SCSI" and NIC to "virtio" is optional but recommended.
 
 7.  With the machine off, click "Add Hardware", and add your Nvidia GPU as a "PCI Host Device" along with any other PCI devices you wish to pass.
 
