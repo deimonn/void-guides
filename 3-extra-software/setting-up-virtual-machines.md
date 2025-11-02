@@ -48,7 +48,7 @@ For Windows guests, you might want to install the VirtIO drivers for improved pe
 
     4.  Boot the machine again. Check or wait until Windows' Device Manager shows the SCSI disk is detected (should appear as "QEMU QEMU HARDDISK SCSI Disk Device").
 
-    5.  Shutdown the machine, then detach and delete the temporary SCSI disk you added in step 6. Afterwards, detach the SATA disk and reattach it as an SCSI disk.
+    5.  Shutdown the machine, then detach and delete the temporary SCSI disk you added in step 3. Afterwards, detach the SATA disk and reattach it as an SCSI disk.
 
 5.  You can also optionally switch the NIC interface in hardware details to "virtio", similarly increasing performance for network I/O.
 
