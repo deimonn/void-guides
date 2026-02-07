@@ -253,7 +253,7 @@ Now we have to set up the virtual machine that we will pass the GPU to.
     </input>
     ```
 
-    Replace `<MOUSE>` and `<KEYBOARD>` with the corresponding names as found in `/etc/input/by-id`.
+    Replace `<MOUSE>` and `<KEYBOARD>` with the corresponding names as found in `/dev/input/by-id`.
 
 11. Lastly, we'll set up audio forwarding. I am assuming you are using PipeWire, as per the [Installation Guide](../1-installation/guide.md).
 
