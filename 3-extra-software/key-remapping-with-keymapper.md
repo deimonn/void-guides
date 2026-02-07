@@ -67,19 +67,35 @@ It is possible to keep keymapper running on the host and use its output as keybo
     elogind-daemon[1028]: Watching system buttons on /dev/input/event20 (keymapper)
     ```
 
-    In my case, `/dev/input/event20` contains my keymapper output.
+    In my case, `/dev/input/event20` contains my keymapper output. If I set that as the `dev` of the keyboard in the VM config, I can use my keymapper-remapped keyboard in the VM without issue.
 
-3.  To avoid having your virtual machine pointing to a device name that could change in the future (the `20` just means it was the 21st device to be added), you can use the following script:
+3.  Because the virtual keymapper device may be assigned a different number in a future boot, it is best to determine it automatically on startup.
+
+    Write the following to some file somewhere, for example `keymapper-tmp-link.sh`:
 
     ```Bash
     #!/bin/bash
 
-    device=$(dmesg | grep -m1 -o -E '/dev/input/event[0-9]+ \(keymapper\)')
-    device=${device::-12}
+    while true; do
+        device=$(dmesg | grep -m1 -o -E '/dev/input/event[0-9]+ \(keymapper\)')
 
-    mkdir -p /tmp/dev/input && ln -s "$device" /tmp/dev/input/keymapper
+        if [[ -z $device ]]; then
+            sleep 1
+            continue
+        fi
+
+        device=${device::-12}
+        mkdir -p /tmp/dev/input && ln -s "$device" /tmp/dev/input/keymapper
+        break
+    done
     ```
 
-    This will create `/tmp/dev/input/keymapper` as a symlink to the actual device, so your VM can point to that instead of `/dev/input/event<N>`.
+    This creates `/tmp/dev/input/keymapper` as a symlink to the actual device, so your VM can point to that instead of to `/dev/input/event<N>`.
 
-    Note that this script must be run as root everytime you boot your computer. How you choose to do that is up to you (`/etc/rc.local` is unsuitable, as this must run *after* the keymapper service starts).
+    Then to have it execute on boot, append the following to `/etc/rc.local`, adjusting the given path as necessary:
+
+    ```Shell
+    (bash /path/to/keymapper-tmp-link.sh >/dev/null 2>&1) &
+    ```
+
+    If everything went well, `/tmp/dev/input/keymapper` should be created automatically everytime you start your computer.
