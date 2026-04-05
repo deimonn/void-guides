@@ -121,7 +121,7 @@ The first thing to do before setting up a desktop is install the appropiate grap
 Install the required packages with:
 
 ```Shell
-sudo xbps-install mesa-dri vulkan-loader mesa-vulkan-radeon mesa-vaapi mesa-vdpau
+sudo xbps-install mesa-dri vulkan-loader mesa-vulkan-radeon mesa-vaapi
 ```
 
 ### Intel GPU

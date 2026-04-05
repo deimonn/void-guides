@@ -22,7 +22,7 @@ This is just like the [Installing the graphics driver](../1-installation/guide.m
 Install the required packages with:
 
 ```Shell
-sudo xbps-install mesa-dri-32bit vulkan-loader-32bit mesa-vulkan-radeon-32bit mesa-vaapi-32bit mesa-vdpau-32bit
+sudo xbps-install mesa-dri-32bit vulkan-loader-32bit mesa-vulkan-radeon-32bit mesa-vaapi-32bit
 ```
 
 ### Intel GPU
