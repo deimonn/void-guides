@@ -48,11 +48,11 @@ If it is, you may want to go check your sound settings. You can select your outp
 
 ## Autostart
 
-You'll likely want PipeWire to start automatically with the session instead of having to start it manually. See [Running user scripts after login](../2-more-configuration/running-user-scripts-after-login).
+You'll likely want PipeWire to start automatically with the session instead of having to start it manually. See [Running user scripts after login](../2-extra-setup/running-user-scripts-after-login).
 
 ## More audio
 
-For further, more advanced configuration of the audio setup (such as microphone or output post-processing), see [Advanced audio configuration](../2-more-configuration/advanced-audio-configuration.md).
+For further, more advanced configuration of the audio setup (such as microphone or output post-processing), see [Advanced audio configuration](../2-extra-setup/advanced-audio-configuration.md).
 
 ## Next steps
 

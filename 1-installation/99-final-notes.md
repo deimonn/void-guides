@@ -10,7 +10,7 @@ lsblk --discard
 
 If your SSD's `DISC-GRAN` and `DISC-MAX` columns are non-zero, then the trim command is supported.
 
-For the trimming script, you need to be able to run scripts periodically as root; see [Running superuser scripts periodically](../2-more-configuration/running-superuser-scripts-periodically.md). Create file `/etc/cron.weekly/fstrim` with contents:
+For the trimming script, you need to be able to run scripts periodically as root; see [Running superuser scripts periodically](../2-extra-setup/running-superuser-scripts-periodically.md). Create file `/etc/cron.weekly/fstrim` with contents:
 
 ```Shell
 #!/bin/sh
@@ -29,7 +29,7 @@ It is worth setting up some scripts to check and notify about updates, so your s
 
 My setup is pretty simple; one script is set to run once a day and syncs the void repositories. The other one runs when you open a terminal, and it prints a message to notify that updates are available.
 
-For the first script, you need to be able to run scripts periodically as root; see [Running superuser scripts periodically](../2-more-configuration/running-superuser-scripts-periodically.md). Create the file `/etc/cron.daily/xbps-sync` with contents:
+For the first script, you need to be able to run scripts periodically as root; see [Running superuser scripts periodically](../2-extra-setup/running-superuser-scripts-periodically.md). Create the file `/etc/cron.daily/xbps-sync` with contents:
 
 ```Shell
 #!/bin/sh

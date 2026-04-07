@@ -43,7 +43,7 @@ You can check by running the `date` command. If it returns an incorrect result, 
 
 - Check whether it is correct with `sudo hwclock --localtime`; if its correct with this setting, then its most likely because you've booted Windows before.
 
-  Windows likes `localtime`, whereas Linux prefers `utc`. You can force Windows to use `utc`; see [Windows dual-booting](../2-more-configuration/windows-dual-booting.md).
+  Windows likes `localtime`, whereas Linux prefers `utc`. You can force Windows to use `utc`; see [Windows dual-booting](../2-extra-setup/windows-dual-booting.md).
 
   To set the hardware clock back to utc from linux, run `sudo hwclock --systohc --utc`.
 

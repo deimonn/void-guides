@@ -39,7 +39,7 @@ As keymapper isn't available in the official void repositories, it has to be bui
     keymapper -u
     ```
 
-    To do it automatically after login, see [Running user scripts after login](../2-more-configuration/running-user-scripts-after-login).
+    To do it automatically after login, see [Running user scripts after login](../2-extra-setup/running-user-scripts-after-login).
 
 ## Further configuration
 
