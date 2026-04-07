@@ -552,6 +552,10 @@ If you're not going to be accessing the disk from Linux at all, you can always a
 
 Replace `<ID>` and `<N>` as appropiate. This should hide the partition from most file managers.
 
+### Forwarding ports
+
+For making ports from the VM available to LAN or WAN, such as for hosting a game server, see [Forwarding guest ports](forwarding-guest-ports.md).
+
 ### Can't open app due to virtualization
 
 If some applications refuse to open on detecting that you're running on a virtual machine, you may want to go through the steps of [Hiding virtualization details](hiding-virtualization-details.md). It won't work for all applications, but it can help with many.
