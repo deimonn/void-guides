@@ -22,7 +22,7 @@ To begin the installation, just run `void-installer` as root. The installation p
 
 If you're lost regarding partitioning, check the [Partitioning Notes](https://docs.voidlinux.org/installation/live-images/partitions.html) in the official documentation.
 
-If you're having trouble booting into Void Linux, see [Can't boot into Void Linux](../4-notes-troubleshooting/cannot-boot-into-void-linux.md).
+If you're having trouble booting into Void Linux, see [Can't boot into Void Linux](../4-notes-troubleshooting/cant-boot-into-void-linux.md).
 
 ## First boot
 
