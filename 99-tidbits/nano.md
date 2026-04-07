@@ -1,4 +1,4 @@
-# Syntax highlight for the `nano` editor
+# Syntax highlighting for `nano`
 
 Append the following to your `~/.nanorc` file (create it if it doesn't exist):
 
