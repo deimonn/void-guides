@@ -1,4 +1,4 @@
-# Installing and configuring KDE
+# Setting up KDE
 
 ## Getting the desktop
 

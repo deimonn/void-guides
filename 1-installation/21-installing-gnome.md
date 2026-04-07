@@ -1,4 +1,4 @@
-# Installing and configuring GNOME
+# Setting up GNOME
 
 ## Getting the desktop
 

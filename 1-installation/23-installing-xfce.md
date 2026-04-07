@@ -1,4 +1,4 @@
-# Installing and configuring XFCE
+# Setting up XFCE
 
 ## Getting the desktop
 
