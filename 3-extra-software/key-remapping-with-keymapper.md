@@ -49,7 +49,7 @@ You'll want to take a look at the [keymapper repo](https://github.com/houmain/ke
 
 ### Keymapper and PCI passthrough
 
-If you followed my [GPU passthrough in Void Linux](../5-gpu-passthrough/gpu-passthrough-in-void-linux.md), you may have run into an issue with keymapper intercepting input devices.
+If you followed my [GPU passthrough in Void Linux](../5-gpu-passthrough/10-gpu-passthrough-in-void-linux.md), you may have run into an issue with keymapper intercepting input devices.
 
 It is possible to keep keymapper running on the host and use its output as keyboard in the guest, but it requires a little bit of hacking.
 
@@ -60,7 +60,7 @@ It is possible to keep keymapper running on the host and use its output as keybo
     @grab-device-id /<YOUR_DEVICE_NAME>/
     ```
 
-    Replace `<YOUR_DEVICE_NAME>` as appropiate; you can figure it out by looking at `/dev/input/by-id` contents and `cat`'ing devices with keymapper disabled as explained in [Creating the virtual machine](../5-gpu-passthrough/gpu-passthrough-in-void-linux.md#creating-the-virtual-machine). You don't need to write out the full name, just the identifying part is good enough.
+    Replace `<YOUR_DEVICE_NAME>` as appropiate; you can figure it out by looking at `/dev/input/by-id` contents and `cat`'ing devices with keymapper disabled as explained in [Creating the virtual machine](../5-gpu-passthrough/10-gpu-passthrough-in-void-linux.md#creating-the-virtual-machine). You don't need to write out the full name, just the identifying part is good enough.
 
 2.  You should be able to use `sudo dmesg | grep "keymapper"` to figure out what ID the keymapper output got assigned. Look for a message like:
 
