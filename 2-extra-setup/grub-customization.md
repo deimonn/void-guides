@@ -1,12 +1,18 @@
-# GRUB customization & repair
-
-GRUB can be further configured and customized by editing the `/etc/default/grub` file. This page covers various customizations I like to do to mine.
-
-It also covers how to fix the GRUB bootloader if its entry got removed from BIOS or its partition contents got messed up.
+# GRUB customization
 
 ## Customization
 
 ***Always remember*** to run `sudo update-grub` after you're done customizing, so the configuration is updated.
+
+### Skipping the bootloader
+
+If you only have one OS and would rather have GRUB instantly boot into it instead of giving you a 5 second countdown, go to `/etc/default/grub` and look for:
+
+```
+GRUB_TIMEOUT=5
+```
+
+Replace `5` with `0`.
 
 ### Letting GRUB remember your last choice
 
