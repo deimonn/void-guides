@@ -4,4 +4,4 @@ This documentation holds various guides to doing stuff in [Void Linux](https://w
 
 Some guides may be useful outside of Void, too.
 
-If you don't have an installation yet, you can start with the [installation guide](1-installation/guide.md).
+If you don't have an installation yet, you can start with the [Download, installation & first boot](1-installation/10-download-install-and-first-boot.md) page.

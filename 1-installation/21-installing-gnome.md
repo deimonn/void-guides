@@ -1,8 +1,49 @@
-# Further configuring GNOME
+# Installing and configuring GNOME
 
-This page covers more possible configuration and recommendations for the GNOME desktop. These are all subjective; see what you wish or don't wish to do/install.
+## Getting the desktop
 
-## Getting rid of GNOME packages
+### Installing packages
+
+Simply install the GNOME metapackage:
+
+```Shell
+sudo xbps-install gnome
+```
+
+This pulls the entire desktop, including many apps and other things. It can be trimmed down later.
+
+### Enabling the display manager
+
+Enable the `gdm` service without automatic start:
+
+```Shell
+sudo touch /etc/sv/gdm/down
+sudo ln -s /etc/sv/gdm /var/service
+```
+
+Then reboot. After logging back in, you can test that `gdm` works correctly with:
+
+```Shell
+sudo sv start gdm
+```
+
+## On the desktop
+
+You should've loaded into GNOME at this point. If you did, congratulations! You can go ahead and make `gdm` start automatically if so:
+
+```Shell
+sudo rm /var/service/gdm/down
+```
+
+There's only one more thing to do, which is to generate the typical directories found in one's home (GNOME does not generate them by itself):
+
+```Shell
+sudo xbps-install xdg-user-dirs-gtk && xdg-user-dirs-update && xdg-user-dirs-gtk-update
+```
+
+The rest of configurations here are all optional and subjective; see what you wish or don't wish to do/install.
+
+### Getting rid of GNOME packages
 
 By default you will not be able to uninstall any of the apps installed by the `gnome` metapackage, like the default weather app, as they are listed as dependencies of it.
 
@@ -28,7 +69,7 @@ To verify it worked, run `xbps-query -O | grep gnome-tweaks`; the command should
 
 You can now start removing those pesky apps you'll never use! Keep in mind some of the apps have a different package name and display name; e.g. the Videos app's package is actually called `totem`; `xbps-query --search` is your friend here.
 
-## Better terminal
+### Better terminal
 
 The default console app in GNOME is quite lackluster and missing almost everything you'd want in a terminal application.
 
@@ -44,11 +85,13 @@ You can remove the lackluster console with:
 sudo xbps-remove -R gnome-console
 ```
 
-**Note:** It can take a while to open the Preferences menu for the first time in the old GNOME terminal; if you experience this, don't worry, it only happens once per session.
+>
 
-## Better font manager
+**Note:** It can take a while to open the Preferences menu for the first time in the old GNOME terminal; if you experience this, your best comfort is that it only happens once per session.
 
-The default fonts app for GNOME is rather lackluster too; it requires you to install new fonts **one file at a time**. Since most fonts will be composed of a lot of files, this is beyond tedious.
+### Better font manager
+
+The default fonts app for GNOME is rather lackluster too; it requires you to install new fonts *one file at a time*. Since most fonts will be composed of a lot of files, it gets rather tedious.
 
 You could install them via command line instead, but for convenience's sake I recommend you use [font-manager](https://github.com/FontManager/font-manager):
 
@@ -58,7 +101,7 @@ sudo xbps-install fontmanager
 
 Simply open Font Manager, click the "+" icon, and select all the fonts you wish to install; they will all be installed at once.
 
-## Installing extensions
+### Installing extensions
 
 The desktop environment of GNOME can be further customized via extensions. To begin, install the `gnome-browser-connector` package:
 
@@ -72,7 +115,7 @@ After doing so, simply go to any desired extension's page and press on the switc
 
 I recommend you at least restore tray icons with [this extension](https://extensions.gnome.org/extension/615/appindicator-support/) or one that serves the same purpose, as those are pretty significant.
 
-### Recommendations
+#### Recommendations
 
 These are some extensions I can personally recommend for GNOME.
 
@@ -100,19 +143,7 @@ These are some extensions I can personally recommend for GNOME.
 
 - [Steal my focus window](https://extensions.gnome.org/extension/6385/steal-my-focus-window/) by detro; tired of that little "*window* is ready" notification that often fails to take you to said window when you click it? So was I. This extension removes the notification and just allows windows to steal your focus without prompt.
 
-## Creating custom color profiles
-
-You can control color tint and temperature per-monitor via ICC profiles; you can see these as applied per monitor in **Settings > Color**. Unfortunately there's no built-in way in GNOME to edit these profiles, and calibration makes use of equipment most of us aren't willing to afford.
-
-Thankfully, [there's already a Python script](https://github.com/zb3/gnome-gamma-tool) that can easily create and manipulate these profiles for us. Simply clone the repository and run the `gnome-gamma-tool.py` script contained within.
-
-The following example increases the color temperature and gamma of the *second* display:
-
-```Shell
-./gnome-gamma-tool.py -d1 -t13000 -g1.2
-```
-
-## Advanced configuration via dconf
+### Advanced configuration via dconf
 
 The `dconf-editor` is a graphical editor that will let you edit more advanced application settings not exposed by the UI. For example, you can force the "Files" app to always display the full path to the current folder instead of the prettified version, as well as change the default visible columns.
 
@@ -124,16 +155,32 @@ sudo xbps-install dconf-editor
 
 Below is some of the stuff that I personally always change.
 
-### Increasing the timeout limit
+#### Increasing the timeout limit
 
-By default, the "application is not responding" dialog appears rather prematurely on GNOME due to its ridiculously low default timeout setting (5 seconds).
+The "application is not responding" dialog appears rather prematurely on GNOME due to the default timeout setting being 5 seconds.
 
-You can change this by navigating to `/org/gnome/mutter` and changing the `check-alive-timeout` setting. I've set it to `30000` (30 seconds).
+You can change this by navigating to `/org/gnome/mutter` and changing the `check-alive-timeout` setting. I set it to `30000` (30 seconds).
 
-### Changing file chooser behavior
+#### Changing file chooser behavior
 
 File chooser settings can be found at `/org/gtk/settings/file-chooser`; for some reason these do not mirror your Nautilus settings.
 
 Thus you may be interested in manually editing:
 - `show-hidden` to be able to see hidden files.
 - `sort-directories-first` if you set the option with the same name in Nautilus.
+
+### Creating custom color profiles
+
+You can control color tint and temperature per-monitor via ICC profiles; you can see these as applied per monitor in **Settings > Color**. Unfortunately there's no built-in way in GNOME to edit these profiles.
+
+Thankfully, [there's already a Python script](https://github.com/zb3/gnome-gamma-tool) that can easily create and manipulate these profiles for us. Simply clone the repository and run the `gnome-gamma-tool.py` script contained within.
+
+The following example increases the color temperature and gamma of the *second* display:
+
+```Shell
+./gnome-gamma-tool.py -d1 -t13000 -g1.2
+```
+
+## Next steps
+
+You'll probably want to set up audio and screenshare next; [Installing an audio and media server](30-setting-up-audio.md) explains how to do that.

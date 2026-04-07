@@ -33,12 +33,13 @@ As keymapper isn't available in the official void repositories, it has to be bui
 
     The above is just example content. You can replace it with your own later.
 
-3.  You need to start the user-owned `keymapper` service yourself. If you followed [Running user scripts after login](../1-installation/guide.md#running-user-scripts-after-login), you can just append the following to your `~/.loginrc`:
+3.  Start the user-owned `keymapper` service:
 
-    ```Bash
-    # Start keymapper.
-    (keymapper -u &>~/keymapper.log) &
+    ```Shell
+    keymapper -u
     ```
+
+    To do it automatically after login, see [Running user scripts after login](../2-more-configuration/running-user-scripts-after-login).
 
 ## Further configuration
 
