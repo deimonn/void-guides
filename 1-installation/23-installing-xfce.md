@@ -50,6 +50,8 @@ Unlike GNOME or KDE, the XFCE package does not install `gvfs` as a dependency, w
 sudo xbps-install gvfs
 ```
 
+This also enables the mounting of disks and SSH filesystems via the file manager.
+
 ### Ricing it up
 
 When you first come into contact with XFCE, perhaps through the Void live image, you may be a little horrified at how ancient it looks and give it a pass. However, you can achieve a lot more with just a little effort and creativity.
