@@ -18,7 +18,7 @@ To begin the installation, just run `void-installer` as root. The installation p
 
 - When choosing a source, ***make sure*** to select `local`, which will copy over most of what's available in the live image to the installation. These guides work with that.
 
-- If you'd rather not dedicate an entire partition to swap space, just skip the swap partition during installation; you can set up a swap file later instead, see [Setting up a swap file](../99-tidbits/swap-file.md).
+- If you'd rather not dedicate an entire partition to swap space, just skip the swap partition during installation; you can set up a swap file later instead, see [Setting up a swap file](../2-extra-setup/setting-up-a-swap-file.md).
 
 If you're lost regarding partitioning, check the [Partitioning Notes](https://docs.voidlinux.org/installation/live-images/partitions.html) in the official documentation.
 
