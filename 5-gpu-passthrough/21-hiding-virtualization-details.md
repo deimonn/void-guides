@@ -58,21 +58,15 @@ Note that these steps are not guaranteed to work for all applications, but this 
     </sysinfo>
     ```
 
-    You will have to fill in all of the `...` parts with actual information, which you should realistically copy from your actual system.
+    You will have to fill in all of the `...` parts with actual information. A couple notes:
 
-    You can fetch SMBIOS information using `dmidecode` from the package of the same name.
+    - You can copy the homework from your actual system by fetching SMBIOS information using `dmidecode` from the package of the same name, however...
 
-3.  Look for a `<uuid>` element at the top near `<domain>`, and replace its contents with the UUID you inserted in `<entry name="uuid">`:
+    - You'll want to copy the UUID for `<system>` from your VM's UUID rather than your motherboard. Look for a `<uuid>` element at the top, near `<domain>`.
 
-    ```XML
-    <uuid>...</uuid>
-    ```
+    - If you don't want to risk your hardware getting permabanned (in case you ever make a native installation of Windows again), it would be wise to fake the serial numbers as well.
 
-    You will also have to change the `<name>` element to some temporary name, then **Apply changes**. This is necessary as otherwise virt-manager will complain about a VM with the given name already existing.
-
-    Afterwards, you can go back and delete the old VM (make sure that "Delete associated storage devices" is **unchecked**) then rename the "new" VM from the temporary name to the original one using the UI. Note that this will lose snapshot information.
-
-4.  Look for a `<hyperv>` block (inside a `<features>` block), which will look something like:
+3.  Look for a `<hyperv>` block (inside a `<features>` block), which will look something like:
 
     ```XML
     <hyperv mode="custom">
