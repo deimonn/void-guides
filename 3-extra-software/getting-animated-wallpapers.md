@@ -145,7 +145,7 @@ If you have Wallpaper Engine on Steam, you can extract video and web wallpapers 
 
 4.  For Hidamari, copy the videos to your `~/Videos/Hidamari` folder. Other wallpaper applications can just select them directly, but you may still prefer to copy them somewhere accessible.
 
-    If your wallpaper is in web form, you will probably have to locally host the files. You can do this easily with Python by running the following command in the directory containing the files:
+    If your wallpaper is in web form, you'll have to locally host the files. You can do this easily with Python by running the following command in the directory containing the files:
 
     ```Shell
     python -m 'http.server' 1337 --bind '127.0.0.1'
