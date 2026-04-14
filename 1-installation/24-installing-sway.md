@@ -299,6 +299,16 @@ SwayFX is a fork of Sway and works as a drop-in replacement; in fact, installing
 
 See the [README](https://github.com/WillPower3309/swayfx?tab=readme-ov-file#new-configuration-options) for information on how to enable the various effects.
 
+### Video wallpapers
+
+For setting videos as wallpapers, see the `mpvpaper` section on [Getting animated wallpapers](../3-extra-software/getting-animated-wallpapers.md).
+
+Only thing of note for Sway is that `swaybg` should be disabled by putting the following in the config:
+
+```Shell
+swaybg_command -
+```
+
 ### Installing themes for apps
 
 Installing themes is relatively straightforward:

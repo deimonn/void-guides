@@ -14,6 +14,8 @@ Coming from Windows and looking for a replacement to Wallpaper Engine? I can rec
 
   There's a couple caveats, however. Not all wallpapers will be rendered correctly; some will even **crash the desktop shell**. Configuration is also non-existent, with only the very basics being available. Still, the ability to use wallpapers from the steam workshop without having to convert them to video first is convenient - so if you're on KDE, give it a try.
 
+- [mpvpaper](https://github.com/GhostNaN/mpvpaper) only works for wlroots-based compositors, such as Sway. It requires a bit of setup as all it does is spawn `mpv` to render a video as wallpaper, but otherwise it works mostly without issues (it does slowly leak memory much like [Hidamari](https://github.com/jeffshee/hidamari), but restarting it is nearly seamless and does not break anything).
+
 ## Using Hidamari
 
 Hidamari is pretty easy to install as it is available from the [FlatHub](installing-apps-via-flatpak.md):
@@ -93,6 +95,34 @@ If you've managed to select a wallpaper that crashes your shell, you can restore
     kstart plasmashell
     ```
 
+## Using mpvpaper
+
+Simply install it from the void repositories:
+
+```Shell
+sudo xbps-install mpvpaper
+```
+
+To set a video wallpaper, ensure no other wallpaper application (such as `swaybg`) is active, then run:
+
+```Shell
+mpvpaper -o "no-audio loop" ALL /path/to/video
+```
+
+The `-o` flag is used to pass options to `mpv`. `ALL` can be replaced with the name of a display to set a wallpaper per display. Note that to set a new wallpaper, you will want to kill the original instance first. The following script can do it for you:
+
+```Shell
+# Kill existing instances.
+while pidof mpvpaper; do
+    kill $(pidof mpvpaper)
+done
+
+# Spawn anew.
+mpvpaper -o "no-audio loop" ALL /path/to/video
+```
+
+Save it somewhere and, assuming you're on Sway, just add an `exec_always` for it. You could also run the script on a timer to prevent the memory leak from becoming too much of an issue.
+
 ## Finding wallpapers
 
 > ℹ️ If you're using **Wallpaper Engine for Kde** this section is not relevant to you.
@@ -113,7 +143,7 @@ If you have Wallpaper Engine on Steam, you can extract video and web wallpapers 
 
     Make sure the wallpaper you download is in video or web form.
 
-4.  For Hidamari, copy the videos to your `~/Videos/Hidamari` folder. Hanabi can just select them directly.
+4.  For Hidamari, copy the videos to your `~/Videos/Hidamari` folder. Other wallpaper applications can just select them directly, but you may still prefer to copy them somewhere accessible.
 
     If your wallpaper is in web form, you will probably have to locally host the files. You can do this easily with Python by running the following command in the directory containing the files:
 
