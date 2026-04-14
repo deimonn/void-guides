@@ -48,7 +48,9 @@ If it is, you may want to go check your sound settings. You can select your outp
 
 ## Autostart
 
-You'll likely want PipeWire to start automatically with the session instead of having to start it manually. See [Running user scripts after login](../2-extra-setup/running-user-scripts-after-login).
+You'll likely want PipeWire to start automatically with the session instead of having to start it manually.
+
+If you're on Sway you can do this with an `exec`; on other environments, see [Running user scripts after login](../2-extra-setup/running-user-scripts-after-login.md).
 
 ## More audio
 

@@ -84,5 +84,6 @@ It is time to download and install the desktop environment. The packages and ins
 - For GNOME, see [Installing and configuring GNOME](21-installing-gnome.md).
 - For KDE, see [Installing and configuring KDE](22-installing-kde.md).
 - For XFCE, see [Installing and configuring XFCE](23-installing-xfce.md).
+- For Sway, see [Installing and configuring Sway](24-installing-sway.md).
 
 The environments above are those I've personally tested, not the extent of what is supported by Void Linux.

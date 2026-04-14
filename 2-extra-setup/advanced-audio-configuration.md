@@ -40,24 +40,22 @@ By default, the sink won't send audio anywhere, and the source will be completel
 
 Any sinks and sources you create using the above method will be destroyed as soon as you restart the session, so you'll have to create them again.
 
-You can automate this process via your `~/.loginrc` file, if you followed [Running user scripts after login](running-user-scripts-after-login.md).
+Instead, you could write a script to do it for you, something along the lines of:
 
-Append the following:
+```Shell
+#!/bin/sh
 
-```Bash
-# Set up audio sinks & sources.
-{
-    # Give PipeWire a little bit of time to settle.
-    sleep 2
+# Wait for PipeWire to be ready.
+while ! pactl stat; do sleep 1; done
 
-    # Create sinks.
-    pactl load-module module-null-sink media.class=Audio/Sink sink_name=audio-sink channel_map=front-left,front-right
-    # Create sources.
-    pactl load-module module-null-sink media.class=Audio/Source/Virtual sink_name=audio-source channel_map=front-left,front-right
-} &>/dev/null &
+# Create sinks.
+pactl load-module module-null-sink media.class=Audio/Sink sink_name=audio-sink channel_map=front-left,front-right
+
+# Create sources.
+pactl load-module module-null-sink media.class=Audio/Source/Virtual sink_name=audio-source channel_map=front-left,front-right
 ```
 
-Customize as desired.
+Then, if you're on Sway, just add an `exec` for the script; on other environments, you can invoke it from a startup script (see [Running user scripts after login](../2-extra-setup/running-user-scripts-after-login.md)).
 
 ## JACK support
 
