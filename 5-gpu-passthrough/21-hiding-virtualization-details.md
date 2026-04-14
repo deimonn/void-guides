@@ -74,10 +74,15 @@ Note that these steps are not guaranteed to work for all applications, but this 
     </hyperv>
     ```
 
-    Replace it with:
+    Inside of it, append:
 
     ```XML
-    <hyperv mode="passthrough"/>
+    <vendor_id state="on" value=""/>
+    ```
+
+4.  Below the `<hyperv>` block, add:
+
+    ```XML
     <kvm>
       <hidden state="on"/>
     </kvm>
