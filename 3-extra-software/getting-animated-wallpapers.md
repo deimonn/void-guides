@@ -8,7 +8,7 @@ Coming from Windows and looking for a replacement to Wallpaper Engine? I can rec
 
 - [Hanabi](https://github.com/jeffshee/gnome-ext-hanabi) is GNOME-specific and requires a more involved installation, only supports setting video files as wallpaper, and may or may not work on your system without significant issues.
 
-  However, it does provide better integration with the GNOME shell (e.g. the wallpaper is animated even in the overview). The activity bar bug only occurs sometimes and can easily be fixed by disabling and re-enabling Hanabi.
+  However, it does provide better integration with the GNOME shell (e.g. the wallpaper is animated even in the overview). The activity bar bug only occurs sometimes and can easily be fixed by just switching workspaces.
 
 - [Wallpaper Engine for Kde](https://github.com/catsout/wallpaper-engine-kde-plugin) is KDE-specific. It makes use of Wallpaper Engine files outright, so if you already have Wallpaper Engine on Steam, you can use this.
 
