@@ -66,9 +66,9 @@ If at any point you wish to remove Hanabi after having installed it, simply disa
 
 First off, you **will** need Steam and Wallpaper Engine to be able to download wallpapers at all; see [Installing Steam](installing-steam.md). To install Wallpaper Engine, you will have to turn on "Enable Steam Play for all other titles" within **Steam Settings > Compatibility**.
 
-Secondly, while "Wallpaper Engine for Kde" can be installed [from the store](https://store.kde.org/p/2194089), it will lack the ability to render scene wallpapers, which means the vast majority of them. Thus, it will be more desirable to build it from source.
+Secondly, while "Wallpaper Engine for Kde" can be installed [from the store](https://store.kde.org/p/2194089), it will lack the ability to render scene wallpapers, which means you'll only get access to video ones. If this is okay with you, you can just use the store version.
 
-I maintain a template for this plugin in my [void-templates](https://github.com/deimonn/void-templates) repository which makes the process easier; simply follow the usage instructions, replacing `<package-name>` with `wallpaper-engine-kde-plugin`.
+If rendering scene wallpapers is desired, you'll have to build it from source. The [Wallpaper Engine for Kde](https://github.com/catsout/wallpaper-engine-kde-plugin) repository has the build instructions, including the list of packages that need to be installed on Void Linux.
 
 ### Configuring
 
