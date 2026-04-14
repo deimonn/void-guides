@@ -72,7 +72,7 @@ It is possible to keep keymapper running on the host and use its output as keybo
 
 3.  Because the virtual keymapper device may be assigned a different number in a future boot, it is best to determine it automatically on startup.
 
-    Write the following to some file somewhere, for example `keymapper-tmp-link.sh`:
+    Save the following script as a file somewhere:
 
     ```Bash
     #!/bin/bash
@@ -96,7 +96,7 @@ It is possible to keep keymapper running on the host and use its output as keybo
     Then to have it execute on boot, append the following to `/etc/rc.local`, adjusting the given path as necessary:
 
     ```Shell
-    (bash /path/to/keymapper-tmp-link.sh >/dev/null 2>&1) &
+    (bash /path/to/script >/dev/null 2>&1) &
     ```
 
     If everything went well, `/tmp/dev/input/keymapper` should be created automatically everytime you start your computer.
