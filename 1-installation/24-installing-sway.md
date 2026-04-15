@@ -349,7 +349,7 @@ Additionally, some applications might expect the following to be set via `gsetti
 ```Shell
 gsettings set org.gnome.desktop.interface icon-theme <ICON_THEME>
 gsettings set org.gnome.desktop.interface gtk-theme <GTK_THEME>
-exec_always gsettings set org.gnome.desktop.interface color-scheme <PREFERENCE>
+gsettings set org.gnome.desktop.interface color-scheme <PREFERENCE>
 ```
 
 Where `<PREFERENCE>` should be `prefer-dark` or `prefer-light`.
