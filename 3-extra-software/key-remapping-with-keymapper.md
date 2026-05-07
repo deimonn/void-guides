@@ -4,11 +4,13 @@ The [keymapper](https://github.com/houmain/keymapper) daemon is a very neat util
 
 It is similar to [keyd](https://github.com/rvaiya/keyd) (which I also recommend you check out if you use only Linux), but keymapper has the added benefit of working cross-platform in Linux, Windows and macOS, allowing you to share one configuration file across many systems. It also comes packed with several more features.
 
-As keymapper isn't available in the official void repositories, it has to be built from source. I provide a package template in my [void-templates](https://github.com/deimonn/void-templates) repository to simplify the process; follow the usage instructions to install it, replacing `<package-name>` with `keymapper`.
-
 ## Installation
 
-1.  To begin, build and install the `keymapper` package via [void-templates](https://github.com/deimonn/void-templates).
+1.  To begin, install the `keymapper` package:
+
+    ```Shell
+    sudo xbps-install keymapper
+    ```
 
 2.  Enable the system-wide service with:
 
