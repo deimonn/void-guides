@@ -117,8 +117,10 @@ If for any reason you installed the `nouveau` or `nvidia` drivers before this st
 3.  Regenerate the `initramfs` to apply the changes:
 
     ```Shell
-    sudo xbps-reconfigure -f linux6.12
+    sudo xbps-reconfigure -f <LINUX_PACKAGE>
     ```
+
+    Replace `<LINUX_PACKAGE>` with any installed linux kernel meta package. You can find which ones you have installed with `xbps-query -s linux-`; e.g. `linux6.18`.
 
 4.  Check that your system still boots fine, is using the AMD card for rendering, and that the Nvidia card belongs to VFIO.
 
