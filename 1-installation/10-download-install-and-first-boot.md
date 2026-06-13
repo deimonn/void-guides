@@ -28,12 +28,14 @@ If you're having trouble booting into Void Linux, see [Can't boot into Void Linu
 
 ### Updating the system
 
-The first step to take is to update the whole system. You may need to invoke `xbps-install` multiple times for this, depending on how up-to-date your image was:
+The first step to take is to update the whole system. The following two commands ought to do the trick:
 
 ```Shell
 sudo xbps-install -Su xbps
 sudo xbps-install -Su
 ```
+
+This will ensure `xbps` is up-to-date first, before updating the rest of the system.
 
 ### Ensuring `date` is correct
 
