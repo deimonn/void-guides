@@ -18,7 +18,7 @@ Install and enable one of the two with:
 
 ```Shell
 sudo xbps-install <DM>
-sudo touch /etc/sv/<DM/down
+sudo touch /etc/sv/<DM>/down
 sudo ln -s /etc/sv/<DM> /var/service
 ```
 
