@@ -1,5 +1,7 @@
 # Setting up Sway
 
+> ⚠️ Sway does not appear to work with virtual GPUs. Trying it in a virtual machine is not currently possible without lengthy workarounds.
+
 ## Getting the desktop
 
 ### Installing packages
