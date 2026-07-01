@@ -271,7 +271,7 @@ cliphist list | <MENU> | cliphist decode | wl-copy
 
 Replace `<MENU>` with a menu tool of your choice, such as `wofi`, `rofi` or some other application launcher with the capability.
 
-See the [GitHub page](https://github.com/sentriz/cliphist?tab=readme-ov-file#usage) for instruction on delete and clear as well.
+See the [GitHub page](https://github.com/sentriz/cliphist?tab=readme-ov-file#usage) for instructions on how to delete and clear history as well.
 
 ### Night light
 
