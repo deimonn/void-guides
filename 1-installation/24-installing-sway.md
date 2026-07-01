@@ -316,7 +316,7 @@ swaybg_command -
 Installing themes is relatively straightforward:
 
 - Fonts go in `~/.fonts`
-- Icon themes go in `~/.icons`
+- Icon and cursor themes go in `~/.icons`
 - GTK themes go in `~/.themes`
 - Kvantum themes go in `~/.config/Kvantum`
 
