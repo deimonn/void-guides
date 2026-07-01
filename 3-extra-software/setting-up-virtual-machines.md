@@ -34,7 +34,7 @@ For Windows guests, you might want to install the VirtIO drivers for improved pe
 
 1.  First, download the [VirtIO Drivers ISO](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso).
 
-2.  Inside the open VM, press on the lightbulb on the toolbar to open hardware details, then go to "SATA CDROM 1".
+2.  In the VM console, open hardware details (second icon from the left in the toolbar), then go to "SATA CDROM 1".
 
 3.  In "Source path", press "Browse" and select the drivers ISO. This will load the ISO as a CDROM. Afterwards simply run the "virtio-win-gt-*arch*" and "virtio-win-guest-tools" found inside the CDROM in the Windows VM.
 
