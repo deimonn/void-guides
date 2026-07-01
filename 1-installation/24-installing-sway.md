@@ -320,55 +320,21 @@ Installing themes is relatively straightforward:
 - GTK themes go in `~/.themes`
 - Kvantum themes go in `~/.config/Kvantum`
 
-Getting them to apply, however, is a lot more involved. I recommend you automate all of the following operations in your Sway config via `exec_always` if you don't want to lose your sanity just to change a theme.
+Getting them to apply is a little more involved.
 
-#### GTK 2 applications
+#### GTK applications
 
-For GTK 2, simply create file `~/.gtkrc-2.0` and write the following to it:
+Customizing GTK application appearance is easiest via settings GUI. You can get one for Sway by installing `nwg-look`:
 
-```ini
-gtk-icon-theme-name = "<ICON_THEME>"
-gtk-theme-name = "<GTK_THEME>"
-gtk-font-name = "<FONT_NAME> <FONT_SIZE>"
+```Bash
+sudo xbps-install nwg-look
 ```
 
-Replace `<ICON_THEME>`, `<GTK_THEME>`, `<FONT_NAME>` and `<FONT_SIZE>` as appropiate.
-
-#### GTK 3 & GTK 4 applications
-
-Applying themes for GTK 3 & 4 is not too disimilar, simply create `~/.config/gtk-3.0/settings.ini` and write to it:
-
-```ini
-[Settings]
-gtk-icon-theme-name = "<ICON_THEME>"
-gtk-theme-name = "<GTK_THEME>"
-gtk-font-name = "<FONT_NAME> <FONT_SIZE>"
-gtk-application-prefer-dark-theme = <TRUE_OR_FALSE>
-```
-
-Additionally, some applications might expect the following to be set via `gsettings`:
-
-```Shell
-gsettings set org.gnome.desktop.interface icon-theme <ICON_THEME>
-gsettings set org.gnome.desktop.interface gtk-theme <GTK_THEME>
-gsettings set org.gnome.desktop.interface color-scheme <PREFERENCE>
-```
-
-Where `<PREFERENCE>` should be `prefer-dark` or `prefer-light`.
-
-#### GTK 4 applications using `libadwaita`
-
-GTK 4 applications based on `libadwaita` are more annoying, as they refuse to obey the above given settings. The only way I've found to get them to acquiesce is by setting `GTK_THEME` prior to starting them:
-
-```Shell
-GTK_THEME=<GTK_THEME> <APP>
-```
-
-To get this to happen dynamically, I simply prefixed `GTK_THEME=<GTM_THEME>` to my launcher. Its not pretty, but alas.
+Then just look for "GTK Settings" in your application launcher. The application, icon, font and cursor themes can all be configured through it.
 
 #### QT applications
 
-QT applications are by far easiest to theme via Kvantum:
+QT applications can be themed easily via Kvantum:
 
 ```Shell
 sudo xbps-install kvantum
@@ -380,7 +346,7 @@ You can set a theme via the provided GUI, or using command:
 kvantummanager --set <KVANTUM_THEME>
 ```
 
-To get the theme to apply, `QT_STYLE_OVERRIDE` must be set. This is most easily done by writing the following to your `~/.bash_profile`, prior to starting Sway:
+To get the theme to apply, `QT_STYLE_OVERRIDE` must be set. For this, you can just write the following to your `~/.bash_profile`:
 
 ```Shell
 export QT_STYLE_OVERRIDE=kvantum
