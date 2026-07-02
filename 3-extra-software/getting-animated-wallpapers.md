@@ -97,7 +97,9 @@ If you've managed to select a wallpaper that crashes your shell, you can restore
 
 ## Using mpvpaper
 
-Simply install it from the void repositories:
+### Installing & setup
+
+To install it, just get it from the void repositories:
 
 ```Shell
 sudo xbps-install mpvpaper
@@ -109,19 +111,42 @@ To set a video wallpaper, ensure no other wallpaper application (such as `swaybg
 mpvpaper -o "no-audio loop" ALL /path/to/video
 ```
 
-The `-o` flag is used to pass options to `mpv`. `ALL` can be replaced with the name of a display to set a wallpaper per display. Note that to set a new wallpaper, you will want to kill the original instance first. The following script can do it for you:
+The `-o` flag is used to pass options to `mpv`. `ALL` can be replaced with the name of a display to set a wallpaper per display. Note that to set a new wallpaper, you will want to kill the original instance first. If you also install `psmisc`, you can just use the following command:
 
 ```Shell
-# Kill existing instances.
-while pidof mpvpaper; do
-    kill $(pidof mpvpaper)
-done
-
-# Spawn anew.
-mpvpaper -o "no-audio loop" ALL /path/to/video
+killall -e mpvpaper; mpvpaper -o "no-audio loop" ALL /path/to/video
 ```
 
-Save it somewhere and, assuming you're on Sway, just add an `exec_always` for it. You could also run the script on a timer to prevent the memory leak from becoming too much of an issue.
+For example, on Sway, you can just `exec_always` the following:
+
+```
+exec_always 'killall -e mpvpaper; mpvpaper -o "no-audio loop" ALL /path/to/video'
+```
+
+### Hack for the memory leak
+
+To prevent the memory leak from becoming too much of an issue, I've set up a script to kill and respawn `mpvpaper` every hour. The way it works is pretty simple:
+
+1.  When setting a wallpaper, we extend the command to also store the wallpaper path on disk:
+
+    ```Shell
+    killall -e mpvpaper; mpvpaper -o "no-audio loop" ALL /path/to/video; echo /path/to/video > ~/.local/state/mpvpaper
+    ```
+
+2.  In a separate daemon-like script, we put the following code:
+
+    ```Shell
+    #!/bin/sh
+
+    while true; do
+   	    sleep 3600
+   	    killall -e mpvpaper; mpvpaper -o "no-audio loop" ALL "$(cat ~/.local/state/mpvpaper)" &
+    done
+    ```
+
+    Make the script run automatically on login, and you're done.
+
+Adjust these to your convenience or need (e.g. the `/path/to/video` can be made into a variable to avoid repetition). The `~/.local/state/mpvpaper` path can realistically be replaced with any path you have write access to.
 
 ## Finding wallpapers
 
