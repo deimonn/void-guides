@@ -241,13 +241,19 @@ The command I like to use is `grimshot copy anything`, which lets you choose a s
 
 ### Color picking
 
-While its possible to do color picking just using `grim` and a long series of pipes, I prefer to just use `hyprpicker`:
+For color picking, just can just use a combination of `slurp`, `grim` and a bunch of utilities to parse the data, chained through a long series of pipes:
+
+```
+bindsym $mod+print exec grim -g "$(slurp -p -b '#00000000')" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy
+```
+
+Alternatively, you can use `hyprpicker`, which freezes the screen first, zooms in on the cursor, and has a nicer UI:
 
 ```Shell
 sudo xbps-install hyprpicker
 ```
 
-Running `hyprpicker -a` lets you select a color on the screen more intuitively to then copy it to the clipboard as hexadecimal.
+Run `hyprpicker -a` to select a pixel and automatically copy it to the clipboard.
 
 ### Clipboard history
 
