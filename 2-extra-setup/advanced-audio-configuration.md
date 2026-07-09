@@ -40,22 +40,24 @@ By default, the sink won't send audio anywhere, and the source will be completel
 
 Any sinks and sources you create using the above method will be destroyed as soon as you restart the session, so you'll have to create them again.
 
-Instead, you could write a script to do it for you, something along the lines of:
+Instead, it is better to define them via PipeWire PulseAudio configuration:
 
-```Shell
-#!/bin/sh
+1.  Create directory `~/.config/pipewire/pipewire-pulse.conf.d`:
 
-# Wait for PipeWire to be ready.
-while ! pactl stat; do sleep 1; done
+    ```Shell
+    mkdir -p ~/.config/pipewire/pipewire-pulse.conf.d
+    ```
 
-# Create sinks.
-pactl load-module module-null-sink media.class=Audio/Sink sink_name=audio-sink channel_map=front-left,front-right
+2.  Write the following to `~/.config/pipewire/pipewire-pulse.conf.d/commands.conf`:
 
-# Create sources.
-pactl load-module module-null-sink media.class=Audio/Source/Virtual sink_name=audio-source channel_map=front-left,front-right
-```
+    ```
+    pulse.cmd = [
+        { cmd = "load-module" args = "module-null-sink media.class=Audio/Sink sink_name=audio-sink channel_map=front-left,front-right" }
+        { cmd = "load-module" args = "module-null-sink media.class=Audio/Source/Virtual sink_name=audio-source channel_map=front-left,front-right" }
+    ]
+    ```
 
-Then, if you're on Sway, just add an `exec` for the script; on other environments, you can invoke it from a startup script (see [Running user scripts after login](../2-extra-setup/running-user-scripts-after-login.md)).
+    Adjust as desired.
 
 ## JACK support
 
