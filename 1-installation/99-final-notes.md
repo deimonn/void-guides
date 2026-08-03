@@ -27,29 +27,43 @@ You can add more `fstrim` commands if you have more than one partition in an SSD
 
 It is worth setting up some scripts to check and notify about updates, so your system doesn't become quickly outdated.
 
-My setup is pretty simple; one script is set to run once a day and syncs the void repositories. The other one runs when you open a terminal, and it prints a message to notify that updates are available.
+My setup is relatively simple:
 
-For the first script, you need to be able to run scripts periodically as root; see [Running superuser scripts periodically](../2-extra-setup/running-superuser-scripts-periodically.md). Create the file `/etc/cron.daily/xbps-sync` with contents:
+1.  First, you need to be able to run scripts periodically as root; see [Running superuser scripts periodically](../2-extra-setup/running-superuser-scripts-periodically.md). Create the file `/etc/cron.daily/xbps-sync` with contents:
 
-```Shell
-#!/bin/sh
-xbps-install -S
-```
+    ```Shell
+    #!/bin/sh
+    xbps-install -S
+    xbps-install -nu > /var/log/xbps-sync
+    ```
 
-Then make it executable with `sudo chmod +x /etc/cron.daily/xbps-sync`. This will sync the repository daily.
+    Make it executable with `sudo chmod +x /etc/cron.daily/xbps-sync`. This will sync the repository daily and log a list of available updates to `/var/log/xbps-sync`.
 
-Then, on your `~/.bashrc` file, you can add the following:
+2.  Then, on your `~/.bashrc` file, add the following:
 
-```Bash
-# Check for updates.
-xbps_check_updates=$(xbps-install -nu)
-if [[ -n $xbps_check_updates ]]; then
-    echo "There are updates available! Run sudo xbps-install -Su to update the system."
-    echo "The following packages can be updated:"
-    echo "$xbps_check_updates"
-    echo ""
-fi
-```
+    ```Bash
+    xbps_check_updates=$(cat /var/log/xbps-sync)
+
+    if [[ -n $xbps_check_updates ]]; then
+        echo "There are updates available! Run sudo xbps-install -Su to update the system."
+        echo "The following packages can be updated:"
+        echo "$xbps_check_updates"
+        echo ""
+    fi
+
+    function sudo {
+        /bin/sudo "$@"
+        code=$?
+
+        if [[ $1 == "xbps-install" ]]; then
+            xbps-install -nu | /bin/sudo tee /var/log/xbps-sync &>/dev/null
+        fi
+
+        return $code
+    }
+    ```
+
+    The first part just checks whether `/var/log/xbps-sync` contains anything to determine if updates are available. The `sudo` part aliases the command to detect invokations of `xbps-install`, updating `/var/log/xbps-sync` after every call.
 
 ## Managing runit services
 
