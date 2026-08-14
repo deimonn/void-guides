@@ -16,7 +16,7 @@ Coming from Windows and looking for a replacement to Wallpaper Engine? I can rec
 
 - [mpvpaper](https://github.com/GhostNaN/mpvpaper) only works for wlroots-based compositors, such as Sway. It requires a bit of setup as all it does is spawn `mpv` to render a video as wallpaper, but otherwise it works mostly without issues (it does slowly leak memory much like [Hidamari](https://github.com/jeffshee/hidamari), but restarting it is nearly seamless and does not break anything).
 
-## Using Hidamari
+## Hidamari
 
 Hidamari is pretty easy to install as it is available from the [FlatHub](https://flathub.org/en/apps/io.github.jeffshee.Hidamari):
 
@@ -26,7 +26,7 @@ flatpak install flathub io.github.jeffshee.Hidamari
 
 Simply open the application; setting up a wallpaper is pretty straightforward.
 
-## Using Hanabi
+## Hanabi
 
 The installation of Hanabi is more involved as it works as a GNOME extension rather than an application.
 
@@ -60,7 +60,7 @@ If at any point you wish to remove Hanabi after having installed it, simply disa
 ./run.sh uninstall
 ```
 
-## Using Wallpaper Engine for Kde
+## Wallpaper Engine for Kde
 
 ### Installing
 
@@ -95,7 +95,7 @@ If you've managed to select a wallpaper that crashes your shell, you can restore
     kstart plasmashell
     ```
 
-## Using mpvpaper
+## mpvpaper
 
 ### Installing & setup
 
