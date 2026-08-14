@@ -18,7 +18,7 @@ Coming from Windows and looking for a replacement to Wallpaper Engine? I can rec
 
 ## Using Hidamari
 
-Hidamari is pretty easy to install as it is available from the [FlatHub](installing-apps-via-flatpak.md):
+Hidamari is pretty easy to install as it is available from the [FlatHub](installing-apps-not-in-the-repos.md):
 
 ```
 flatpak install flathub io.github.jeffshee.Hidamari

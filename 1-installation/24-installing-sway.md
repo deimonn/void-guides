@@ -75,7 +75,7 @@ You should also **definitely** check out the [Configuration](https://github.com/
 
 ### Setting up the XDG environment
 
-The XDG desktop portal will let applications installed via [flatpak](../3-extra-software/installing-apps-via-flatpak.md), as well as some others, perform common desktop tasks such as sending notifications or screensharing.
+The XDG desktop portal will let applications installed via [flatpak](../3-extra-software/installing-apps-not-in-the-repos.md), as well as some others, perform common desktop tasks such as sending notifications or screensharing.
 
 There are multiple portal backend implementations, often designed for specific desktops; but two are considered generic and should work well with Sway:
 
