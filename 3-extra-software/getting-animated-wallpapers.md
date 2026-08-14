@@ -24,7 +24,7 @@ Hidamari is pretty easy to install as it is available from the [FlatHub](https:/
 flatpak install flathub io.github.jeffshee.Hidamari
 ```
 
-Simply open the application; setting up a wallpaper is pretty straightforward.
+For instructions on how to set up Flatpak, see [Installing apps not in the repos](installing-apps-not-in-the-repos.md#flatpak).
 
 ## Hanabi
 
