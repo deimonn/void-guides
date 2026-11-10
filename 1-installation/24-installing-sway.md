@@ -103,6 +103,34 @@ For the XDG desktop portals to get started automatically, the D-Bus session must
 exec dbus-update-activation-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK I3SOCK XCURSOR_SIZE XCURSOR_THEME
 ```
 
+### Configuring screencasting
+
+`xdg-desktop-portal-wlr` requires a chooser for screencasting, which will default to `wmenu`, `wofi`, `rofi`, `bemenu`, `mew` or `fuzzel`. If none of these are installed, screencasting will always fail.
+
+To configure a different menu, write the following to `~/.config/xdg-desktop-portal-wlr/config`:
+
+```
+[screencast]
+chooser_type=dmenu
+chooser_cmd=<MENUCMD>
+```
+
+Replacing `<MENUCMD>` with your choice of menu. Alternatively, for more intuitive cursor-based selection (click on the monitor you want to share), install `slurp` with:
+
+```Shell
+sudo xbps-install slurp
+```
+
+Then write the following to `~/.config/xdg-desktop-portal-wlr/config`:
+
+```
+[screencast]
+chooser_type=simple
+chooser_cmd=slurp -f 'Monitor: %o' -or
+```
+
+But note this only allows you to choose monitors and not individual windows.
+
 ### Getting a file manager
 
 Sway by default does not come with a file manager. If you need one that is relatively flexible while remaining light, a popular choice is Thunar:
